@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartVantage AI | AI Business Automation UAE</title>
+  <meta name="description" content="SmartVantage AI delivers intelligent automation for Aviation, Construction, Real Estate & Hospitality. Licensed in Sharjah, UAE." />
+  <meta name="keywords" content="SmartVantage AI, AI automation UAE, aviation AI, construction AI, real estate AI, hospitality AI, intelligent automation, Sharjah SRTIP" />
+  <link rel="icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/SmartVantageAILogo_4116d04a.jpeg" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+       SMARTVANTAGE AI — Neon Cyberpunk Design System
+       Primary: #00D4FF (Neon Electric Blue)
+       Text: #F0FAFF (Neon White)
+       Background: Deep Space Navy
+       ═══════════════════════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --neon: #00D4FF;
+      --neon-rgb: 0, 212, 255;
+      --text: #F0FAFF;
+      --text-dim: rgba(240, 250, 255, 0.65);
+      --text-muted: rgba(240, 250, 255, 0.45);
+      --bg-deep: #090c18;
+      --bg-section: #0d1020;
+      --bg-card: rgba(0, 212, 255, 0.04);
+      --border: rgba(0, 212, 255, 0.15);
+      --border-hover: rgba(0, 212, 255, 0.5);
+      --font-heading: 'Rajdhani', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    img { max-width: 100%; display: block; }
+    input, select, textarea {
+      font-family: var(--font-body);
+      background: rgba(0, 212, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--neon);
+      box-shadow: 0 0 10px rgba(var(--neon-rgb), 0.2);
+    }
+    textarea { resize: vertical; min-height: 100px; }
+    select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2300D4FF' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
+    option { background: var(--bg-deep); }
+
+    /* Grid Background */
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Neon Glow Effect */
+    .neon-glow {
+      box-shadow: 0 0 15px rgba(var(--neon-rgb), 0.15), inset 0 0 15px rgba(var(--neon-rgb), 0.05);
+    }
+    .neon-glow:hover {
+      box-shadow: 0 0 25px rgba(var(--neon-rgb), 0.3), inset 0 0 25px rgba(var(--neon-rgb), 0.1);
+    }
+
+    .neon-text {
+      color: var(--neon);
+      text-shadow: 0 0 20px rgba(var(--neon-rgb), 0.6), 0 0 40px rgba(var(--neon-rgb), 0.3);
+    }
+
+    /* Container */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navigation */
+    .nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      transition: all 0.3s;
+      background: transparent;
+    }
+    .nav.scrolled {
+      background: rgba(9, 12, 24, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo img {
+      width: 40px; height: 40px; border-radius: 2px; object-fit: contain;
+      filter: drop-shadow(0 0 6px rgba(var(--neon-rgb), 0.5));
+    }
+    .nav-logo-text { font-family: var(--font-heading); font-weight: 700; font-size: 18px; letter-spacing: 0.15em; }
+    .nav-logo-sub { font-size: 11px; letter-spacing: 0.12em; color: rgba(var(--neon-rgb), 0.7); }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-link {
+      font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-dim); transition: color 0.2s; padding: 8px 0;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--neon); }
+    .nav-btn {
+      padding: 8px 20px; font-size: 13px; font-weight: 600; border-radius: 2px;
+      background: rgba(var(--neon-rgb), 0.1); border: 1px solid rgba(var(--neon-rgb), 0.5);
+      color: var(--neon); font-family: var(--font-heading); letter-spacing: 0.1em;
+      transition: all 0.3s; text-transform: uppercase;
+    }
+    .nav-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(var(--neon-rgb), 0.3); }
+    .mobile-toggle { display: none; color: var(--text); padding: 8px; }
+    .mobile-menu {
+      display: none; position: absolute; top: 64px; left: 0; width: 100%;
+      background: rgba(9, 12, 24, 0.98); border-bottom: 1px solid rgba(var(--neon-rgb), 0.2);
+      padding: 16px 20px; flex-direction: column; gap: 8px;
+    }
+    .mobile-menu.open { display: flex; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+    }
+
+    /* Section Base */
+    .section { padding: 96px 0; position: relative; }
+    .section-alt { background: var(--bg-section); }
+    .section-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 2px; font-size: 11px;
+      font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+      background: rgba(var(--neon-rgb), 0.06); border: 1px solid rgba(var(--neon-rgb), 0.2);
+      color: var(--neon); margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--font-heading); font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700; color: var(--text); line-height: 1.1; margin-bottom: 16px;
+    }
+    .section-desc { font-size: 17px; color: var(--text-dim); max-width: 640px; line-height: 1.7; }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 2px; padding: 24px; transition: all 0.3s;
+    }
+    .card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 25px rgba(var(--neon-rgb), 0.1);
+    }
+    .card-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .card-desc { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+
+    /* Stats Card */
+    .stat-card {
+      padding: 24px; border-radius: 2px; text-align: center;
+      background: var(--bg-card); border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .stat-card:hover { border-color: var(--border-hover); box-shadow: 0 0 20px rgba(var(--neon-rgb), 0.15); }
+    .stat-value {
+      font-family: var(--font-heading); font-size: 36px; font-weight: 700;
+      text-shadow: 0 0 10px rgba(var(--neon-rgb), 0.3);
+    }
+    .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(var(--neon-rgb), 0.7); margin-top: 6px; }
+
+    /* Icon Box */
+    .icon-box {
+      width: 48px; height: 48px; border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(var(--neon-rgb), 0.08); border: 1px solid rgba(var(--neon-rgb), 0.3);
+    }
+    .icon-box svg { width: 24px; height: 24px; stroke: var(--neon); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-sm { width: 36px; height: 36px; }
+    .icon-sm svg { width: 18px; height: 18px; }
+
+    /* Tags */
+    .tag {
+      display: inline-block; padding: 4px 10px; font-size: 11px; border-radius: 2px;
+      background: rgba(var(--neon-rgb), 0.06); border: 1px solid rgba(var(--neon-rgb), 0.2);
+      color: var(--text-dim);
+    }
+
+    /* Grid Layouts */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 32px; font-size: 15px; font-weight: 700; border-radius: 2px;
+      background: rgba(var(--neon-rgb), 0.12); border: 1px solid rgba(var(--neon-rgb), 0.6);
+      color: var(--neon); font-family: var(--font-heading); letter-spacing: 0.1em;
+      text-transform: uppercase; transition: all 0.3s;
+    }
+    .btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(var(--neon-rgb), 0.3); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 32px; font-size: 15px; font-weight: 700; border-radius: 2px;
+      border: 1px solid rgba(240, 250, 255, 0.2); color: var(--text);
+      font-family: var(--font-heading); letter-spacing: 0.1em;
+      text-transform: uppercase; transition: all 0.3s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.05); }
+    .btn-sm { padding: 8px 16px; font-size: 12px; }
+    .btn-danger { border-color: #ff4444; color: #ff4444; }
+    .btn-danger:hover { background: rgba(255,68,68,0.1); }
+    .btn-success { border-color: #00ff88; color: #00ff88; }
+    .btn-success:hover { background: rgba(0,255,136,0.1); }
+
+    /* Industry Card with BG Image */
+    .industry-card {
+      position: relative; overflow: hidden; border-radius: 2px; min-height: 320px;
+      background: rgba(9, 12, 24, 0.8); border: 1px solid var(--border);
+      transition: all 0.5s; cursor: default;
+    }
+    .industry-card:hover { border-color: var(--border-hover); box-shadow: 0 0 30px rgba(var(--neon-rgb), 0.1); }
+    .industry-card-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .industry-card-bg img {
+      width: 100%; height: 100%; object-fit: cover; opacity: 0.2;
+      transition: all 0.5s; transform: scale(1.05);
+    }
+    .industry-card:hover .industry-card-bg img { opacity: 0.3; transform: scale(1); }
+    .industry-card-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(9,12,24,0.98) 0%, rgba(9,12,24,0.7) 60%, transparent 100%);
+    }
+    .industry-card-content {
+      position: relative; z-index: 1; padding: 32px;
+      display: flex; flex-direction: column; justify-content: flex-end; min-height: 320px;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 64px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(9,12,24,0.95) 0%, rgba(9,12,24,0.6) 50%, rgba(9,12,24,0.85) 100%);
+    }
+    .hero-content { position: relative; z-index: 10; }
+    .hero-neon-line {
+      position: absolute; top: 0; width: 1px; height: 100%; opacity: 0.15;
+      background: linear-gradient(to bottom, transparent, var(--neon), transparent);
+    }
+
+    /* Dashboard Widgets */
+    .kpi-card {
+      padding: 20px; border-radius: 2px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .kpi-card:hover { border-color: var(--border-hover); }
+    .kpi-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+    .kpi-value { font-family: var(--font-heading); font-size: 28px; font-weight: 700; margin-top: 4px; }
+    .kpi-change { font-size: 12px; margin-top: 4px; }
+    .kpi-change.up { color: #00ff88; }
+    .kpi-change.down { color: #ff4444; }
+
+    /* Table */
+    .table-wrapper { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td {
+      padding: 12px 16px; text-align: left; font-size: 13px;
+      border-bottom: 1px solid rgba(var(--neon-rgb), 0.08);
+    }
+    th {
+      font-family: var(--font-heading); font-weight: 600; color: var(--neon);
+      text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px;
+    }
+    td { color: var(--text-dim); }
+    tr:hover td { color: var(--text); background: rgba(var(--neon-rgb), 0.02); }
+
+    /* Status Badges */
+    .badge {
+      display: inline-block; padding: 3px 10px; font-size: 10px; font-weight: 600;
+      border-radius: 2px; text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .badge-success { background: rgba(0,255,136,0.1); color: #00ff88; border: 1px solid rgba(0,255,136,0.3); }
+    .badge-warning { background: rgba(255,200,0,0.1); color: #ffc800; border: 1px solid rgba(255,200,0,0.3); }
+    .badge-danger { background: rgba(255,68,68,0.1); color: #ff4444; border: 1px solid rgba(255,68,68,0.3); }
+    .badge-info { background: rgba(var(--neon-rgb),0.1); color: var(--neon); border: 1px solid rgba(var(--neon-rgb),0.3); }
+
+    /* Chart Placeholder */
+    .chart-container {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 2px;
+      padding: 24px; min-height: 250px; position: relative;
+    }
+    .chart-bar {
+      display: flex; align-items: flex-end; gap: 8px; height: 180px; padding-top: 20px;
+    }
+    .chart-bar-item {
+      flex: 1; background: linear-gradient(to top, rgba(var(--neon-rgb), 0.3), rgba(var(--neon-rgb), 0.8));
+      border-radius: 2px 2px 0 0; transition: all 0.3s; position: relative; min-width: 30px;
+    }
+    .chart-bar-item:hover { background: linear-gradient(to top, rgba(var(--neon-rgb), 0.5), var(--neon)); }
+    .chart-bar-label {
+      position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%);
+      font-size: 10px; color: var(--text-muted); white-space: nowrap;
+    }
+
+    /* Tabs */
+    .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+    .tab {
+      padding: 10px 20px; font-size: 13px; font-weight: 600; color: var(--text-muted);
+      border-bottom: 2px solid transparent; transition: all 0.2s;
+      text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-heading);
+    }
+    .tab:hover { color: var(--text-dim); }
+    .tab.active { color: var(--neon); border-bottom-color: var(--neon); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Animations */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    @keyframes neonPulse { 0%, 100% { box-shadow: 0 0 10px rgba(var(--neon-rgb), 0.3); } 50% { box-shadow: 0 0 25px rgba(var(--neon-rgb), 0.6); } }
+    .animate-fade-up { animation: fadeInUp 0.6s ease-out forwards; }
+    .animate-fade { animation: fadeIn 0.5s ease-out forwards; }
+    .animate-pulse { animation: pulse 2s ease-in-out infinite; }
+    .animate-neon-pulse { animation: neonPulse 3s ease-in-out infinite; }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      color: rgba(var(--neon-rgb), 0.5); animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    /* Page transitions */
+    .page { display: none; }
+    .page.active { display: block; animation: fadeIn 0.3s ease-out; }
+
+    /* Founder Avatar */
+    .founder-avatar {
+      width: 128px; height: 128px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(var(--neon-rgb), 0.1); border: 2px solid rgba(var(--neon-rgb), 0.4);
+    }
+    .founder-avatar span {
+      font-family: var(--font-heading); font-size: 48px; font-weight: 700; color: var(--neon);
+    }
+
+    /* Sidebar Layout */
+    .app-layout { display: flex; min-height: 100vh; padding-top: 64px; }
+    .sidebar {
+      width: 240px; background: rgba(9, 12, 24, 0.95); border-right: 1px solid var(--border);
+      padding: 24px 0; flex-shrink: 0; position: fixed; top: 64px; bottom: 0;
+      overflow-y: auto; z-index: 50;
+    }
+    .sidebar-link {
+      display: flex; align-items: center; gap: 12px; padding: 10px 24px;
+      font-size: 13px; color: var(--text-dim); transition: all 0.2s;
+      border-left: 2px solid transparent;
+    }
+    .sidebar-link:hover { color: var(--text); background: rgba(var(--neon-rgb), 0.04); }
+    .sidebar-link.active { color: var(--neon); border-left-color: var(--neon); background: rgba(var(--neon-rgb), 0.06); }
+    .sidebar-link svg { width: 18px; height: 18px; stroke-width: 2; flex-shrink: 0; }
+    .app-main { flex: 1; margin-left: 240px; padding: 32px; }
+
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .app-main { margin-left: 0; }
+    }
+
+    /* Back button */
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; font-size: 12px; color: var(--text-muted);
+      border: 1px solid var(--border); border-radius: 2px;
+      transition: all 0.2s; margin-bottom: 24px; text-transform: uppercase;
+      letter-spacing: 0.08em; font-family: var(--font-heading); font-weight: 600;
+    }
+    .back-btn:hover { color: var(--neon); border-color: var(--neon); }
+
+    /* Progress Steps */
+    .progress-steps { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
+    .progress-step {
+      display: flex; align-items: center; gap: 8px; font-size: 13px;
+      color: var(--text-muted); font-family: var(--font-heading); font-weight: 600;
+    }
+    .progress-step.active { color: var(--neon); }
+    .progress-step.completed { color: #00ff88; }
+    .progress-step-num {
+      width: 32px; height: 32px; border-radius: 50%; display: flex;
+      align-items: center; justify-content: center; font-size: 14px;
+      border: 1px solid var(--border);
+    }
+    .progress-step.active .progress-step-num { border-color: var(--neon); background: rgba(var(--neon-rgb), 0.1); color: var(--neon); }
+    .progress-step.completed .progress-step-num { border-color: #00ff88; background: rgba(0,255,136,0.1); color: #00ff88; }
+    .progress-line { flex: 1; height: 1px; background: var(--border); }
+
+    /* Form Group */
+    .form-group { margin-bottom: 20px; }
+    .form-label {
+      display: block; font-size: 12px; font-weight: 600; color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;
+    }
+
+    /* Audit Result */
+    .audit-result {
+      padding: 20px; border-radius: 2px; margin-top: 16px;
+      background: var(--bg-card); border: 1px solid var(--border);
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed; bottom: 24px; right: 24px; padding: 14px 24px;
+      background: rgba(9, 12, 24, 0.95); border: 1px solid rgba(var(--neon-rgb), 0.4);
+      border-radius: 2px; color: var(--neon); font-size: 14px; z-index: 1000;
+      animation: fadeInUp 0.3s ease-out; box-shadow: 0 0 20px rgba(var(--neon-rgb), 0.2);
+    }
+    .toast.hide { animation: fadeOut 0.3s ease-out forwards; }
+    @keyframes fadeOut { to { opacity: 0; transform: translateY(20px); } }
+
+    /* Donut Chart CSS */
+    .donut {
+      width: 180px; height: 180px; border-radius: 50%; position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .donut-center {
+      position: absolute; text-align: center;
+    }
+    .donut-center .donut-value { font-family: var(--font-heading); font-size: 28px; font-weight: 700; }
+    .donut-center .donut-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* List item */
+    .list-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0; border-bottom: 1px solid rgba(var(--neon-rgb), 0.06);
+    }
+    .list-item:last-child { border-bottom: none; }
+
+    /* File Upload Zone */
+    .upload-zone {
+      border: 2px dashed var(--border); border-radius: 2px; padding: 40px;
+      text-align: center; transition: all 0.3s; cursor: pointer;
+    }
+    .upload-zone:hover { border-color: var(--neon); background: rgba(var(--neon-rgb), 0.03); }
+    .upload-zone.dragover { border-color: var(--neon); background: rgba(var(--neon-rgb), 0.06); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: rgba(var(--neon-rgb), 0.2); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(var(--neon-rgb), 0.4); }
+
+    /* Utility */
+    .text-center { text-align: center; }
+    .text-neon { color: var(--neon); }
+    .mt-2 { margin-top: 8px; }
+    .mt-4 { margin-top: 16px; }
+    .mt-6 { margin-top: 24px; }
+    .mt-8 { margin-top: 32px; }
+    .mb-2 { margin-bottom: 8px; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-6 { margin-bottom: 24px; }
+    .gap-2 { gap: 8px; }
+    .gap-4 { gap: 16px; }
+    .flex { display: flex; }
+    .flex-wrap { flex-wrap: wrap; }
+    .items-center { align-items: center; }
+    .justify-between { justify-content: space-between; }
+    .justify-center { justify-content: center; }
+    .flex-col { flex-direction: column; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SVG ICON DEFINITIONS
+     ═══════════════════════════════════════════════════════════════ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icon-plane" viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1L11 12l-2 3H6l-1 1 3 2 2 3 1-1v-3l3-2 3.7 7.3c.2.4.7.5 1.1.3l.5-.3c.4-.2.5-.6.5-1.1z"/></symbol>
+  <symbol id="icon-hardhat" viewBox="0 0 24 24"><path d="M2 18a1 1 0 001 1h18a1 1 0 001-1v-2a1 1 0 00-1-1H3a1 1 0 00-1 1v2zM10 10V5a1 1 0 011-1h2a1 1 0 011 1v5M4 15v-2.5A8.5 8.5 0 0112 4a8.5 8.5 0 018 8.5V15"/></symbol>
+  <symbol id="icon-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18zM6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2M10 6h4M10 10h4M10 14h4M10 18h4"/></symbol>
+  <symbol id="icon-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2M7 2v20M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></symbol>
+  <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="icon-trending-up" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+  <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="icon-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="icon-brain" viewBox="0 0 24 24"><path d="M9.5 2A5.5 5.5 0 004 7.5 5.5 5.5 0 006 18h1v4l3-3M14.5 2A5.5 5.5 0 0120 7.5 5.5 5.5 0 0018 18h-1v4l-3-3M12 2v20"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></symbol>
+  <symbol id="icon-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></symbol>
+  <symbol id="icon-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
+  <symbol id="icon-chevron-down" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="icon-file-text" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></symbol>
+  <symbol id="icon-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></symbol>
+  <symbol id="icon-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="icon-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="icon-dollar" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></symbol>
+  <symbol id="icon-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></symbol>
+  <symbol id="icon-scale" viewBox="0 0 24 24"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1zM2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1zM7 21h10M12 3v18M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+  <symbol id="icon-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="icon-bar-chart" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></symbol>
+  <symbol id="icon-clipboard" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></symbol>
+  <symbol id="icon-alert-triangle" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="icon-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="icon-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></symbol>
+  <symbol id="icon-edit" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></symbol>
+  <symbol id="icon-trash" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></symbol>
+  <symbol id="icon-chevron-left" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></symbol>
+  <symbol id="icon-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
+  <symbol id="icon-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+</svg>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     NAVIGATION BAR
+     ═══════════════════════════════════════════════════════════════ -->
+<nav class="nav" id="mainNav">
+  <div class="container nav-inner">
+    <a href="#home" class="nav-logo" onclick="navigate('home')">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/SmartVantageAILogo_4116d04a.jpeg" alt="SmartVantage AI Logo" />
+      <div>
+        <span class="nav-logo-text">SMARTVANTAGE AI</span>
+        <span class="nav-logo-sub" style="display:block">INTELLIGENT AUTOMATION</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#home" class="nav-link active" onclick="navigate('home')" data-nav="home">Home</a>
+      <a href="#apps" class="nav-link" onclick="navigate('apps')" data-nav="apps">Apps</a>
+      <a href="#aviation" class="nav-link" onclick="navigate('aviation')" data-nav="aviation">Aviation</a>
+      <a href="#construction" class="nav-link" onclick="navigate('construction')" data-nav="construction">Construction</a>
+      <a href="#realestate" class="nav-link" onclick="navigate('realestate')" data-nav="realestate">Real Estate</a>
+      <a href="#hospitality" class="nav-link" onclick="navigate('hospitality')" data-nav="hospitality">Hospitality</a>
+      <button class="nav-btn neon-glow" onclick="navigate('start-journey')">GET STARTED</button>
+    </div>
+    <button class="mobile-toggle" onclick="toggleMobileMenu()">
+      <svg width="24" height="24"><use href="#icon-menu"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="nav-link" onclick="navigate('home');toggleMobileMenu()">Home</a>
+    <a href="#apps" class="nav-link" onclick="navigate('apps');toggleMobileMenu()">Apps</a>
+    <a href="#aviation" class="nav-link" onclick="navigate('aviation');toggleMobileMenu()">Aviation</a>
+    <a href="#construction" class="nav-link" onclick="navigate('construction');toggleMobileMenu()">Construction</a>
+    <a href="#realestate" class="nav-link" onclick="navigate('realestate');toggleMobileMenu()">Real Estate</a>
+    <a href="#hospitality" class="nav-link" onclick="navigate('hospitality');toggleMobileMenu()">Hospitality</a>
+    <button class="btn-primary btn-sm" onclick="navigate('start-journey');toggleMobileMenu()" style="margin-top:8px">GET STARTED</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE: HOME (Landing Page)
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/hero-bg-neon_09501a99.jpg" alt="AI Command Center" />
+      <div class="hero-overlay"></div>
+      <div class="grid-bg" style="position:absolute;inset:0"></div>
+    </div>
+    <div class="hero-neon-line" style="left:25%"></div>
+    <div class="hero-neon-line" style="right:33%;opacity:0.08"></div>
+
+    <div class="container hero-content">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+        <div>
+          <div class="section-badge" style="margin-bottom:24px">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--neon);display:inline-block" class="animate-pulse"></span>
+            Introducing SmartVantage AI &mdash; Next-Gen Automation
+          </div>
+          <h1 class="section-title" style="font-size:clamp(40px,6vw,72px);margin-bottom:24px">
+            TRANSFORM YOUR<br>
+            <span class="neon-text">BUSINESS</span> WITH<br>
+            INTELLIGENT AI
+          </h1>
+          <p class="section-desc" style="margin-bottom:32px">
+            After 20 years of hands-on experience across Aviation, Construction, Real Estate, and
+            Hospitality, SmartVantage AI delivers cutting-edge automation solutions designed to
+            transform how businesses operate.
+          </p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px">
+            <button class="btn-primary neon-glow" onclick="navigate('start-journey')">
+              START YOUR AI JOURNEY <svg width="18" height="18"><use href="#icon-arrow-right"/></svg>
+            </button>
+            <button class="btn-secondary" onclick="scrollToEl('founder-section')">MEET THE FOUNDER</button>
+          </div>
+          <div style="display:flex;gap:24px;flex-wrap:wrap">
+            <a href="tel:+971504387781" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted)">
+              <svg width="16" height="16" style="stroke:var(--neon)"><use href="#icon-phone"/></svg>
+              +971 50 438 7781
+            </a>
+            <a href="mailto:ecsandoval@smartvantage.info" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted)">
+              <svg width="16" height="16" style="stroke:var(--neon)"><use href="#icon-mail"/></svg>
+              ecsandoval@smartvantage.info
+            </a>
+          </div>
+        </div>
+        <div class="grid-4" style="grid-template-columns:1fr 1fr">
+          <div class="stat-card animate-fade-up"><svg width="32" height="32" style="stroke:var(--neon);margin:0 auto 12px"><use href="#icon-trending-up"/></svg><div class="stat-value">40%</div><div class="stat-label">Cost Reduction</div></div>
+          <div class="stat-card animate-fade-up" style="animation-delay:0.1s"><svg width="32" height="32" style="stroke:var(--neon);margin:0 auto 12px"><use href="#icon-zap"/></svg><div class="stat-value">65%</div><div class="stat-label">Efficiency Gain</div></div>
+          <div class="stat-card animate-fade-up" style="animation-delay:0.2s"><svg width="32" height="32" style="stroke:var(--neon);margin:0 auto 12px"><use href="#icon-shield"/></svg><div class="stat-value">85%</div><div class="stat-label">Risk Mitigation</div></div>
+          <div class="stat-card animate-fade-up" style="animation-delay:0.3s"><svg width="32" height="32" style="stroke:var(--neon);margin:0 auto 12px"><use href="#icon-brain"/></svg><div class="stat-value">95%</div><div class="stat-label">AI Accuracy</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <svg width="24" height="24"><use href="#icon-chevron-down"/></svg>
+    </div>
+  </section>
+
+  <!-- INDUSTRY SOLUTIONS -->
+  <section class="section section-alt">
+    <div class="grid-bg" style="position:absolute;inset:0;opacity:0.5"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div class="text-center" style="max-width:640px;margin:0 auto 64px">
+        <div class="section-badge">INDUSTRY SOLUTIONS</div>
+        <h2 class="section-title">AI AUTOMATION FOR YOUR INDUSTRY</h2>
+        <p class="section-desc" style="margin:0 auto">Specialized AI automation systems designed for your industry's unique challenges.</p>
+      </div>
+      <div class="grid-2">
+        <div class="industry-card" onclick="navigate('aviation')">
+          <div class="industry-card-bg"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/aviation-neon_1eb12042.jpg" alt="Aviation AI" /></div>
+          <div class="industry-card-content">
+            <div class="icon-box" style="margin-bottom:16px"><svg><use href="#icon-plane"/></svg></div>
+            <h3 class="card-title" style="font-size:24px">Aviation AI</h3>
+            <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--neon);margin-bottom:12px">Autonomous Flight Systems & Real-Time Analytics</p>
+            <p class="card-desc" style="margin-bottom:16px">Predictive maintenance, crew scheduling, and flight operations optimization powered by advanced AI.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="tag">Aircraft Health Monitoring</span><span class="tag">Crew Fatigue Management</span><span class="tag">GCAA Compliance</span><span class="tag">Cost Optimization</span>
+            </div>
+          </div>
+        </div>
+        <div class="industry-card" onclick="navigate('construction')">
+          <div class="industry-card-bg"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/construction-neon_a24bf998.jpg" alt="Construction AI" /></div>
+          <div class="industry-card-content">
+            <div class="icon-box" style="margin-bottom:16px"><svg><use href="#icon-hardhat"/></svg></div>
+            <h3 class="card-title" style="font-size:24px">Design & Construction AI</h3>
+            <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--neon);margin-bottom:12px">AI-Driven Blueprinting & Automated Workflows</p>
+            <p class="card-desc" style="margin-bottom:16px">Generative design, site safety monitoring, and project management AI for mega-projects.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="tag">Generative Design</span><span class="tag">Safety Monitoring</span><span class="tag">Risk Assessment</span><span class="tag">Timeline Optimization</span>
+            </div>
+          </div>
+        </div>
+        <div class="industry-card" onclick="navigate('realestate')">
+          <div class="industry-card-bg"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/realestate-neon_e5981651.jpg" alt="Real Estate AI" /></div>
+          <div class="industry-card-content">
+            <div class="icon-box" style="margin-bottom:16px"><svg><use href="#icon-building"/></svg></div>
+            <h3 class="card-title" style="font-size:24px">Real Estate AI</h3>
+            <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--neon);margin-bottom:12px">Predictive Market Modeling & Virtual Valuation</p>
+            <p class="card-desc" style="margin-bottom:16px">Property valuation, tenant screening, and virtual staging solutions for maximum ROI.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="tag">AI Valuation</span><span class="tag">Tenant Screening</span><span class="tag">Virtual Staging</span><span class="tag">Market Prediction</span>
+            </div>
+          </div>
+        </div>
+        <div class="industry-card" onclick="navigate('hospitality')">
+          <div class="industry-card-bg"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/hospitality-neon_d28c8822.jpg" alt="Hospitality AI" /></div>
+          <div class="industry-card-content">
+            <div class="icon-box" style="margin-bottom:16px"><svg><use href="#icon-utensils"/></svg></div>
+            <h3 class="card-title" style="font-size:24px">Food & Beverages AI</h3>
+            <p style="font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--neon);margin-bottom:12px">Interactive Dining & Smart Inventory Management</p>
+            <p class="card-desc" style="margin-bottom:16px">Inventory management, demand forecasting, and menu optimization for F&B operations.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="tag">Smart Inventory</span><span class="tag">Demand Forecasting</span><span class="tag">Menu Engineering</span><span class="tag">Cost Control</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPS PORTAL PREVIEW -->
+  <section class="section">
+    <div class="grid-bg" style="position:absolute;inset:0;opacity:0.3"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div class="text-center" style="max-width:640px;margin:0 auto 64px">
+        <div class="section-badge">AI APPLICATIONS</div>
+        <h2 class="section-title">OUR AI-POWERED TOOLS</h2>
+        <p class="section-desc" style="margin:0 auto">Purpose-built applications for aviation, legal, and enterprise operations.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="cursor:pointer" onclick="navigate('ai-tracker')">
+          <div class="icon-box" style="margin-bottom:16px"><svg><use href="#icon-search"/></svg></div>
+          <h3 class="card-title">AI Apps Directory</h3>
+          <p class="card-desc">Discover and track AI applications across industries. Search, filter, and analyze trending tools.</p>
+          <div style="margin-top:12px"><span class="tag">Search</span> <span class="tag">Analytics</span> <span class="tag">Trends</span></div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="navigate('law-firm')">
+          <div class="icon-box" style="margin-bottom:16px"><svg><use href="#icon-scale"/></svg></div>
+          <h3 class="card-title">Law Firm Automation</h3>
+          <p class="card-desc">Comprehensive legal practice management with AI-powered document automation and billing.</p>
+          <div style="margin-top:12px"><span class="tag">Legal</span> <span class="tag">Billing</span> <span class="tag">Documents</span></div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="navigate('meeting-minutes')">
+          <div class="icon-box" style="margin-bottom:16px"><svg><use href="#icon-file-text"/></svg></div>
+          <h3 class="card-title">Meeting Minutes Generator</h3>
+          <p class="card-desc">AI-powered meeting documentation. Upload transcripts, get professional minutes automatically.</p>
+          <div style="margin-top:12px"><span class="tag">AI Analysis</span> <span class="tag">Auto-Extract</span> <span class="tag">Export</span></div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="navigate('mom-generator')">
+          <div class="icon-box" style="margin-bottom:16px"><svg><use href="#icon-clipboard"/></svg></div>
+          <h3 class="card-title">MOM Generator</h3>
+          <p class="card-desc">Meeting minutes management for Abu Dhabi Airports with multi-terminal tracking.</p>
+          <div style="margin-top:12px"><span class="tag">AUH</span> <span class="tag">AAN</span> <span class="tag">Airports</span></div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="navigate('airside-auditor')">
+          <div class="icon-box" style="margin-bottom:16px"><svg><use href="#icon-camera"/></svg></div>
+          <h3 class="card-title">Airside Auditor</h3>
+          <p class="card-desc">AI-powered visual inspection for airport compliance auditing with CAR regulation checks.</p>
+          <div style="margin-top:12px"><span class="tag">Compliance</span> <span class="tag">Inspection</span> <span class="tag">Safety</span></div>
+        </div>
+        <div class="card" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer" onclick="navigate('apps')">
+          <svg width="48" height="48" style="stroke:var(--neon);margin-bottom:16px"><use href="#icon-layers"/></svg>
+          <h3 class="card-title">View All Apps</h3>
+          <p class="card-desc">Browse the complete suite of SmartVantage AI applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE FOUNDER -->
+  <section class="section section-alt" id="founder-section">
+    <div class="grid-bg" style="position:absolute;inset:0;opacity:0.3"></div>
+    <div style="position:absolute;inset:0;opacity:0.05;background:radial-gradient(ellipse at 30% 50%, rgba(var(--neon-rgb), 0.3) 0%, transparent 70%)"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:center">
+        <div style="text-align:center">
+          <div style="position:relative;display:inline-block;margin-bottom:24px">
+            <div style="position:absolute;inset:-16px;border-radius:2px;filter:blur(20px);opacity:0.3;background:rgba(var(--neon-rgb),0.3)"></div>
+            <div style="position:relative;border:2px solid rgba(var(--neon-rgb),0.4);border-radius:2px;overflow:hidden;padding:32px;background:rgba(var(--neon-rgb),0.04)">
+              <div class="founder-avatar animate-neon-pulse" style="margin:0 auto 16px">
+                <span>ES</span>
+              </div>
+              <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.15em;color:rgba(var(--neon-rgb),0.6)">Emmanuel Sandoval</p>
+              <div style="border-top:1px solid rgba(var(--neon-rgb),0.2);margin-top:20px;padding-top:20px">
+                <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:700">Emmanuel Sandoval</h3>
+                <p style="font-size:13px;color:var(--neon);margin-top:4px;font-weight:600">Founder & CEO &mdash; SmartVantage AI</p>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:4px">Civil Engineer | MSc Construction Management</p>
+                <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
+                  <a href="tel:+971504387781" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim)">
+                    <svg width="14" height="14" style="stroke:var(--neon)"><use href="#icon-phone"/></svg> +971 50 438 7781
+                  </a>
+                  <a href="mailto:ecsandoval@smartvantage.info" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim)">
+                    <svg width="14" height="14" style="stroke:var(--neon)"><use href="#icon-mail"/></svg> ecsandoval@smartvantage.info
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="section-badge">MEET THE FOUNDER</div>
+          <h2 class="section-title" style="margin-bottom:24px">
+            I DIDN'T JUST STUDY THESE INDUSTRIES &mdash; <span class="neon-text">I'VE LIVED THEM</span>
+          </h2>
+          <p class="section-desc" style="margin-bottom:32px">
+            I'm not just another tech company selling AI solutions. I'm someone who has walked in your shoes &mdash; managed airports, built mega-projects, dealt with tenants, and run a restaurant. When you talk to SmartVantage AI, you're talking to someone who truly understands your challenges.
+          </p>
+          <div class="grid-2">
+            <div class="card">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+                <div class="icon-box icon-sm"><svg><use href="#icon-plane"/></svg></div>
+                <h4 class="card-title" style="margin:0;font-size:14px">Aviation & Construction Expert</h4>
+              </div>
+              <p class="card-desc" style="font-size:13px">Civil Engineer with a Master's Degree in Construction Management. Two decades in Airport Design, Facility Management, and Airport Operations.</p>
+            </div>
+            <div class="card">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+                <div class="icon-box icon-sm"><svg><use href="#icon-building"/></svg></div>
+                <h4 class="card-title" style="margin:0;font-size:14px">Multi-Billion Dhs Projects</h4>
+              </div>
+              <p class="card-desc" style="font-size:13px">Having worked on some of the region's largest construction projects, understanding the challenges of managing timelines, budgets, and safety at scale.</p>
+            </div>
+            <div class="card">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+                <div class="icon-box icon-sm"><svg><use href="#icon-trending-up"/></svg></div>
+                <h4 class="card-title" style="margin:0;font-size:14px">Real Estate Investor</h4>
+              </div>
+              <p class="card-desc" style="font-size:13px">Owner of rental properties in both the Philippines and the UAE, knowing the pain points of property management, tenant screening, and maximizing ROI.</p>
+            </div>
+            <div class="card">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+                <div class="icon-box icon-sm"><svg><use href="#icon-utensils"/></svg></div>
+                <h4 class="card-title" style="margin:0;font-size:14px">Hospitality Entrepreneur</h4>
+              </div>
+              <p class="card-desc" style="font-size:13px">Proud owner of Arbab RestoBar and Music Lounge, living the daily realities of inventory management, demand forecasting, and customer experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="section" style="overflow:hidden">
+    <div class="grid-bg" style="position:absolute;inset:0;opacity:0.4"></div>
+    <div style="position:absolute;inset:0;opacity:0.1;background:radial-gradient(ellipse at 50% 50%, rgba(var(--neon-rgb), 0.4) 0%, transparent 70%)"></div>
+    <div class="container text-center" style="position:relative;z-index:1;max-width:800px">
+      <h2 class="section-title" style="margin-bottom:32px">
+        READY TO SEE AI AUTOMATION<br><span class="neon-text">IN ACTION?</span>
+      </h2>
+      <p class="section-desc" style="font-size:19px;margin:0 auto 48px;max-width:700px">
+        Visit our interactive platform and experience the future of business automation.
+        Whether you're in aviation, construction, real estate, or hospitality &mdash; we speak your language.
+      </p>
+      <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:64px">
+        <button class="btn-primary neon-glow" onclick="navigate('start-journey')" style="padding:18px 40px;font-size:17px">
+          START YOUR AI JOURNEY <svg width="20" height="20"><use href="#icon-arrow-right"/></svg>
+        </button>
+        <button class="btn-secondary" onclick="scrollToEl('founder-section')" style="padding:18px 40px;font-size:17px">LET'S CONNECT</button>
+      </div>
+      <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;font-size:12px;color:rgba(var(--neon-rgb),0.4)">
+        <span>#SmartVantageAI</span><span>#AIAutomation</span><span>#AviationTech</span><span>#ConstructionTech</span><span>#RealEstateTech</span><span>#HospitalityTech</span><span>#UAE</span><span>#Philippines</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding:48px 0;border-top:1px solid var(--border);background:var(--bg-deep)">
+    <div class="container">
+      <div class="grid-3" style="margin-bottom:32px">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/SmartVantageAILogo_4116d04a.jpeg" alt="Logo" style="width:36px;height:36px;border-radius:2px;filter:drop-shadow(0 0 5px rgba(var(--neon-rgb),0.4))" />
+            <span style="font-family:var(--font-heading);font-weight:700;letter-spacing:0.15em">SMARTVANTAGE AI</span>
+          </div>
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.7">
+            Intelligent automation solutions powered by 20+ years of industry expertise. Licensed under SRTIP, Sharjah, UAE.
+          </p>
+        </div>
+        <div>
+          <h4 style="font-family:var(--font-heading);font-size:13px;font-weight:700;color:var(--neon);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:16px">Industries</h4>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+            <li><a href="#aviation" onclick="navigate('aviation')" style="font-size:13px;color:var(--text-muted)">Aviation AI</a></li>
+            <li><a href="#construction" onclick="navigate('construction')" style="font-size:13px;color:var(--text-muted)">Design & Construction AI</a></li>
+            <li><a href="#realestate" onclick="navigate('realestate')" style="font-size:13px;color:var(--text-muted)">Real Estate AI</a></li>
+            <li><a href="#hospitality" onclick="navigate('hospitality')" style="font-size:13px;color:var(--text-muted)">Food & Beverages AI</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-family:var(--font-heading);font-size:13px;font-weight:700;color:var(--neon);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:16px">Contact</h4>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="tel:+971504387781" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-dim)">
+              <svg width="16" height="16" style="stroke:var(--neon);flex-shrink:0"><use href="#icon-phone"/></svg> +971 50 438 7781
+            </a>
+            <a href="mailto:ecsandoval@smartvantage.info" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-dim)">
+              <svg width="16" height="16" style="stroke:var(--neon);flex-shrink:0"><use href="#icon-mail"/></svg> ecsandoval@smartvantage.info
+            </a>
+            <span style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-dim)">
+              <svg width="16" height="16" style="stroke:var(--neon);flex-shrink:0"><use href="#icon-globe"/></svg> SRTIP, Sharjah, UAE
+            </span>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(var(--neon-rgb),0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+        <p style="font-size:11px;color:rgba(240,250,255,0.3)">&copy; 2024 SmartVantage AI. All rights reserved. Licensed under SRTIP, Sharjah, UAE.</p>
+        <div style="display:flex;align-items:center;gap:8px">
+          <svg width="14" height="14" style="stroke:rgba(var(--neon-rgb),0.4)"><use href="#icon-award"/></svg>
+          <span style="font-size:11px;color:rgba(var(--neon-rgb),0.4)">Powered by IntelliSpace Engineering Company</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE: START JOURNEY (Onboarding)
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-start-journey">
+  <div style="min-height:100vh;padding-top:96px;display:flex;align-items:center;justify-content:center">
+    <div class="grid-bg" style="position:fixed;inset:0;opacity:0.3;z-index:0"></div>
+    <div style="position:relative;z-index:1;width:100%;max-width:600px;padding:0 20px">
+      <button class="back-btn" onclick="navigate('home')">
+        <svg width="16" height="16"><use href="#icon-chevron-left"/></svg> Back
+      </button>
+      <div class="text-center mb-6">
+        <h1 class="section-title" style="font-size:36px">START YOUR <span class="neon-text">AI JOURNEY</span></h1>
+        <p class="section-desc" style="margin:8px auto 0">Select your industry and set up your account.</p>
+      </div>
+
+      <!-- Progress Steps -->
+      <div class="progress-steps" id="journeyProgress">
+        <div class="progress-step active" data-step="1"><div class="progress-step-num">1</div><span>Industry</span></div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="2"><div class="progress-step-num">2</div><span>Details</span></div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="3"><div class="progress-step-num">3</div><span>Account</span></div>
+      </div>
+
+      <!-- Step 1: Industry -->
+      <div id="journey-step-1" class="animate-fade">
+        <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:700;margin-bottom:20px">Select Your Industry</h3>
+        <div class="grid-2" style="gap:12px">
+          <button class="card" style="text-align:center;padding:32px;cursor:pointer" onclick="selectIndustry('aviation')">
+            <svg width="40" height="40" style="stroke:var(--neon);margin:0 auto 12px"><use href="#icon-plane"/></svg>
+            <div class="card-title">Aviation</div>
+          </button>
+          <button class="card" style="text-align:center;padding:32px;cursor:pointer" onclick="selectIndustry('construction')">
+            <svg width="40" height="40" style="stroke:var(--neon);margin:0 auto 12px"><use href="#icon-hardhat"/></svg>
+            <div class="card-title">Construction</div>
+          </button>
+          <button class="card" style="text-align:center;padding:32px;cursor:pointer" onclick="selectIndustry('realestate')">
+            <svg width="40" height="40" style="stroke:var(--neon);margin:0 auto 12px"><use href="#icon-building"/></svg>
+            <div class="card-title">Real Estate</div>
+          </button>
+          <button class="card" style="text-align:center;padding:32px;cursor:pointer" onclick="selectIndustry('hospitality')">
+            <svg width="40" height="40" style="stroke:var(--neon);margin:0 auto 12px"><use href="#icon-utensils"/></svg>
+            <div class="card-title">Hospitality</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Company Details -->
+      <div id="journey-step-2" class="hidden animate-fade">
+        <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:700;margin-bottom:20px">Company Details</h3>
+        <div class="form-group"><label class="form-label">Company Name</label><input type="text" id="companyName" placeholder="Enter company name" /></div>
+        <div class="form-group"><label class="form-label">Your Role</label><select id="companyRole"><option value="">Select role</option><option>CEO / Founder</option><option>CTO / CIO</option><option>Operations Manager</option><option>Project Manager</option><option>Other</option></select></div>
+        <div class="form-group"><label class="form-label">Company Size</label><select id="companySize"><option value="">Select size</option><option>1-10 employees</option><option>11-50 employees</option><option>51-200 employees</option><option>201-1000 employees</option><option>1000+ employees</option></select></div>
+        <div style="display:flex;gap:12px;margin-top:24px">
+          <button class="btn-secondary btn-sm" onclick="journeyBack()">Back</button>
+          <button class="btn-primary btn-sm" onclick="journeyNext()" style="flex:1">Next</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Account -->
+      <div id="journey-step-3" class="hidden animate-fade">
+        <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:700;margin-bottom:20px">Create Account</h3>
+        <div class="form-group"><label class="form-label">Work Email</label><input type="email" id="workEmail" placeholder="you@company.com" /></div>
+        <div class="form-group"><label class="form-label">Password</label><input type="password" id="workPassword" placeholder="Create a password" /></div>
+        <div class="form-group" style="display:flex;align-items:center;gap:8px">
+          <input type="checkbox" id="termsCheck" style="width:auto;padding:0" />
+          <label for="termsCheck" style="font-size:13px;color:var(--text-dim)">I agree to the Terms of Service & Privacy Policy</label>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:24px">
+          <button class="btn-secondary btn-sm" onclick="journeyBack()">Back</button>
+          <button class="btn-primary btn-sm neon-glow" onclick="completeJourney()" style="flex:1">CREATE ACCOUNT</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE: APPS DIRECTORY
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-apps">
+  <div style="padding-top:96px;min-height:100vh">
+    <div class="container">
+      <button class="back-btn" onclick="navigate('home')"><svg width="16" height="16"><use href="#icon-chevron-left"/></svg> Home</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:32px">
+        <div>
+          <div class="section-badge">ALL APPLICATIONS</div>
+          <h1 class="section-title" style="font-size:36px">SmartVantage AI Apps</h1>
+        </div>
+        <div style="position:relative;width:300px">
+          <svg width="18" height="18" style="stroke:var(--text-muted);position:absolute;left:12px;top:50%;transform:translateY(-50%)"><use href="#icon-search"/></svg>
+          <input type="text" id="appSearch" placeholder="Search apps..." oninput="filterApps()" style="padding-left:40px" />
+        </div>
+      </div>
+      <div class="grid-3" id="appGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE: AI TRACKER
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-ai-tracker">
+  <div style="padding-top:96px;min-height:100vh">
+    <div class="container">
+      <button class="back-btn" onclick="navigate('apps')"><svg width="16" height="16"><use href="#icon-chevron-left"/></svg> Apps</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:32px">
+        <div>
+          <div class="section-badge">AI APPS DIRECTORY</div>
+          <h1 class="section-title" style="font-size:36px">AI Tracker</h1>
+          <p class="section-desc">Discover and track AI applications across industries.</p>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div style="position:relative;margin-bottom:32px">
+        <svg width="20" height="20" style="stroke:var(--text-muted);position:absolute;left:16px;top:50%;transform:translateY(-50%)"><use href="#icon-search"/></svg>
+        <input type="text" id="aiTrackerSearch" placeholder="Search AI apps by name or description..." style="padding:16px 16px 16px 48px;font-size:15px" oninput="filterAIApps()" />
+      </div>
+
+      <!-- Stats -->
+      <div class="grid-4" style="margin-bottom:32px">
+        <div class="kpi-card"><div class="kpi-label">Total Apps</div><div class="kpi-value text-neon" id="totalApps">0</div></div>
+        <div class="kpi-card"><div class="kpi-label">New This Week</div><div class="kpi-value text-neon">12</div></div>
+        <div class="kpi-card"><div class="kpi-label">Categories</div><div class="kpi-value text-neon">8</div></div>
+        <div class="kpi-card"><div class="kpi-label">Avg Rating</div><div class="kpi-value text-neon">4.5</div></div>
+      </div>
+
+      <!-- Charts + Apps Grid -->
+      <div class="grid-2" style="margin-bottom:32px">
+        <div class="chart-container">
+          <h3 class="card-title" style="margin-bottom:16px">Category Distribution</h3>
+          <div id="categoryChart"></div>
+        </div>
+        <div class="chart-container">
+          <h3 class="card-title" style="margin-bottom:16px">Trending Apps</h3>
+          <div class="chart-bar" id="trendingChart"></div>
+        </div>
+      </div>
+
+      <h3 class="card-title" style="margin-bottom:16px;font-size:20px">All AI Applications</h3>
+      <div class="grid-3" id="aiAppsGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE: LAW FIRM AUTOMATION
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-law-firm">
+  <div class="app-layout">
+    <div class="sidebar">
+      <a class="sidebar-link active" onclick="lawTab('dashboard')"><svg><use href="#icon-home"/></svg>Dashboard</a>
+      <a class="sidebar-link" onclick="lawTab('clients')"><svg><use href="#icon-users"/></svg>Clients</a>
+      <a class="sidebar-link" onclick="lawTab('matters')"><svg><use href="#icon-briefcase"/></svg>Matters</a>
+      <a class="sidebar-link" onclick="lawTab('documents')"><svg><use href="#icon-file-text"/></svg>Documents</a>
+      <a class="sidebar-link" onclick="lawTab('billing')"><svg><use href="#icon-dollar"/></svg>Billing</a>
+      <a class="sidebar-link" onclick="lawTab('research')"><svg><use href="#icon-search"/></svg>Research</a>
+      <div style="padding:24px;margin-top:auto">
+        <button class="back-btn" onclick="navigate('apps')" style="width:100%"><svg width="16" height="16"><use href="#icon-chevron-left"/></svg> Back to Apps</button>
+      </div>
+    </div>
+    <div class="app-main" id="lawContent">
+      <!-- Dashboard Tab -->
+      <div id="law-dashboard">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px">
+          <div>
+            <h1 style="font-family:var(--font-heading);font-size:28px;font-weight:700">Welcome back</h1>
+            <p style="font-size:13px;color:var(--text-muted)" id="lawDate"></p>
+          </div>
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/U2ACPknwKyz2RgmW5yBA68/svai-logo_db8481ce.jpeg" alt="Logo" style="width:40px;height:40px;border-radius:2px;filter:drop-shadow(0 0 5px rgba(var(--neon-rgb),0.4))" />
+        </div>
+        <div class="grid-4" style="grid-template-columns:repeat(5,1fr);margin-bottom:32px">
+          <div class="kpi-card"><div class="kpi-label">Active Clients</div><div class="kpi-value text-neon">24</div><div class="kpi-change up">+3 this month</div></div>
+          <div class="kpi-card"><div class="kpi-label">Active Matters</div><div class="kpi-value text-neon">18</div><div class="kpi-change up">+2 new</div></div>
+          <div class="kpi-card"><div class="kpi-label">Documents</div><div class="kpi-value text-neon">156</div></div>
+          <div class="kpi-card"><div class="kpi-label">Revenue (MTD)</div><div class="kpi-value text-neon">$47K</div><div class="kpi-change up">+12%</div></div>
+          <div class="kpi-card"><div class="kpi-label">Pending Invoices</div><div class="kpi-value" style="color:#ffc800">$12K</div></div>
+        </div>
+        <div class="grid-2" style="margin-bottom:32px">
+          <div class="chart-container">
+            <h3 class="card-title" style="margin-bottom:16px">Revenue Trend (6 Months)</h3>
+            <div class="chart-bar" id="revenueChart"></div>
+          </div>
+          <div class="chart-container">
+            <h3 class="card-title" style="margin-bottom:16px">Practice Areas</h3>
+            <div id="practiceChart" style="display:flex;flex-direction:column;gap:12px;margin-top:16px"></div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom:16px">Upcoming Deadlines</h3>
+            <div class="list-item"><div><div style="font-size:14px">Johnson v. Smith</div><div style="font-size:12px;color:var(--text-muted)">Motion filing deadline</div></div><span class="badge badge-danger">2 days</span></div>
+            <div class="list-item"><div><div style="font-size:14px">Acme Corp Acquisition</div><div style="font-size:12px;color:var(--text-muted)">Due diligence review</div></div><span class="badge badge-warning">5 days</span></div>
+            <div class="list-item"><div><div style="font-size:14px">Estate of Williams</div><div style="font-size:12px;color:var(--text-muted)">Probate hearing</div></div><span class="badge badge-info">1 week</span></div>
+          </div>
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom:16px">Quick Actions</h3>
+            <div class="grid-2" style="gap:8px">
+              <button class="btn-primary btn-sm" onclick="lawTab('clients')"><svg width="14" height="14"><use href="#icon-users"/></svg> New Client Intake</button>
+              <button class="btn-primary btn-sm" onclick="lawTab('billing')"><svg width="14" height="14"><use href="#icon-clock"/></svg> Log Time Entry</button>
+              <button class="btn-primary btn-sm" onclick="lawTab('documents')"><svg width="14" height="14"><use href="#icon-file-text"/></svg> Generate Document</button>
+              <button class="btn-primary btn-sm" onclick="lawTab('research')"><svg width="14" height="14"><use href="#icon-search"/></svg> Legal Research</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Clients Tab -->
+      <div id="law-clients" class="hidden">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+          <h2 style="font-family:var(--font-heading);font-size:24px;font-weight:700">Client Management</h2>
+          <button class="btn-primary btn-sm" onclick="addLawClient()"><svg width="14" height="14"><use href="#icon-plus"/></svg> Add Client</button>
+        </div>
+        <div class="table-wrapper card" style="padding:0;overflow:hidden">
+          <table>
+            <thead><tr><th>Name</th><th>Type</th><th>Matters</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="clientsTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Matters Tab -->
+      <div id="law-matters" class="hidden">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+          <h2 style="font-family:var(--font-heading);font-size:24px;font-weight:700">Case / Matter Tracking</h2>
+          <button class="btn-primary btn-sm" onclick="addLawMatter()"><svg width="14" height="14"><use href="#icon-plus"/></svg> New Matter</button>
+        </div>
+        <div class="table-wrapper card" style="padding:0;overflow:hidden">
+          <table>
+            <thead><tr><th>Matter</th><th>Client</th><th>Area</th><th>Status</th><th>Deadline</th></tr></thead>
+            <tbody id="mattersTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Documents Tab -->
+      <div id="law-documents" class="hidden">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
+          <h2 style="font-family:var(--font-heading);font-size:24px;font-weight:700">Document Management</h2>
+          <button class="btn-primary btn-sm"><svg width="14" height="14"><use href="#icon-upload"/></svg> Upload</button>
+        </div>
+        <div class="table-wrapper card" style="padding:0;overflow:hidden">
+          <table>
+            <thead><tr><th>Document</th><th>Type</th><th>Matter</th><th>Date</th><th>Actions</th></tr></thead>
+            <tbody id="documentsTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Billing Tab -->
+      <div id="law-billing" class="hidden">
+        <h2 style="font-family:var(--font-heading);font-size:24px;font-weight:700;margin-bottom:24px">Billing & Invoicing</h2>
+        <div class="grid-3" style="margin-bottom:24px">
+          <div class="kpi-card"><div class="kpi-label">Total Billed</div><div class="kpi-value text-neon">$234,500</div></div>
+          <div class="kpi-card"><div class="kpi-label">Outstanding</div><div class="kpi-value" style="color:#ffc800">$45,200</div></div>
+          <div class="kpi-card"><div class="kpi-label">Collected</div><div class="kpi-value" style="color:#00ff88">$189,300</div></div>
+        </div>
+        <div class="table-wrapper card" style="padding:0;overflow:hidden">
+          <table>
+            <thead><tr><th>Invoice #</th><th>Client</th><th>Amount</th><th>Status</th><th>Due Date</th></tr></thead>
+            <tbody id="billingTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Research Tab -->
+      <div id="law-research" class="hidden">
+        <h2 style="font-family:var(--font-heading);font-size:24px;font-weight:700;margin-bottom:24px">AI Legal Research</h2>
+        <div class="card" style="margin-bottom:24px">
+          <div class="form-group"><label class="form-label">Research Query</label><textarea id="researchQuery" placeholder="Enter your legal research question..." style="min-height:80px"></textarea></div>
+          <div style="display:flex;gap:12px">
+            <select id="researchJurisdiction" style="width:200px"><option>All Jurisdictions</option><option>UAE Federal</option><option>Dubai</option><option>Abu Dhabi</option><option>US Federal</option></select>
+            <button class="btn-primary btn-sm neon-glow" onclick="performResearch()"><svg width="14" height="14"><use href="#icon-brain"/></svg> AI Research</button>
+          </div>
+        </div>
+        <div id="researchResults"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE: MEETING MINUTES GENERATOR
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-meeting-minutes">
+  <div style="padding-top:96px;min-height:100vh">
+    <div class="container">
+      <button class="back-btn" onclick="navigate('apps')"><svg width="16" height="16"><use href="#icon-chevron-left"/></svg> Apps</button>
+      <div class="text-center" style="margin-bottom:48px">
+        <div class="section-badge">MEETING MINUTES GENERATOR</div>
+        <h1 class="section-title" style="font-size:36px">AI-Powered Meeting Documentation</h1>
+        <p class="section-desc" style="margin:0 auto">Upload transcripts, get professional meeting minutes automatically.</p>
+      </div>
+
+      <div class="tabs" id="meetingTabs">
+        <button class="tab active" onclick="meetingTab('new')">New Meeting</button>
+        <button class="tab" onclick="meetingTab('history')">History</button>
+        <button class="tab" onclick="meetingTab('templates')">Templates</button>
+      </div>
+
+      <!-- New Meeting -->
+      <div id="meeting-new">
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom:16px">Meeting Details</h3>
+            <div class="form-group"><label class="form-label">Meeting Title</label><input type="text" id="meetingTitle" placeholder="e.g., Weekly Team Standup" /></div>
+            <div class="form-group"><label class="form-label">Date</label><input type="date" id="meetingDate" /></div>
+            <div class="form-group"><label class="form-label">Location / Platform</label><input type="text" id="meetingLocation" placeholder="e.g., Zoom, Conference Room A" /></div>
+            <div class="form-group"><label class="form-label">Attendees (comma separated)</label><input type="text" id="meetingAttendees" placeholder="John, Jane, Mike" /></div>
+          </div>
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom:16px">Upload Transcript</h3>
+            <div class="upload-zone" id="meetingUploadZone" onclick="document.getElementById('meetingFile').click()" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="event.preventDefault();this.classList.remove('dragover');handleMeetingFile(event.dataTransfer.files[0])">
+              <svg width="48" height="48" style="stroke:var(--neon);margin:0 auto 16px"><use href="#icon-upload"/></svg>
+              <p style="font-size:14px;color:var(--text-dim);margin-bottom:8px">Drag & drop or click to upload</p>
+              <p style="font-size:12px;color:var(--text-muted)">Supports DOCX, CSV, TXT, Audio files</p>
+              <input type="file" id="meetingFile" style="display:none" onchange="handleMeetingFile(this.files[0])" accept=".docx,.csv,.txt,.mp3,.wav,.m4a" />
+            </div>
+            <div id="meetingFileInfo" class="hidden" style="margin-top:12px;padding:12px;background:rgba(var(--neon-rgb),0.06);border-radius:2px">
+              <span id="meetingFileName" style="font-size:13px;color:var(--neon)"></span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:24px">
+          <div class="form-group"><label class="form-label">Meeting Notes / Transcript Text</label><textarea id="meetingNotes" placeholder="Paste your meeting notes or transcript here..." style="min-height:150px"></textarea></div>
+          <button class="btn-primary neon-glow" onclick="generateMinutes()" style="width:100%">
+            <svg width="18" height="18"><use href="#icon-brain"/></svg> GENERATE MEETING MINUTES
+          </button>
+        </div>
+        <div id="minutesResult" class="hidden" style="margin-top:32px"></div>
+      </div>
+
+      <!-- History -->
+      <div id="meeting-history" class="hidden">
+        <div class="table-wrapper card" style="padding:0;overflow:hidden">
+          <table>
+            <thead><tr><th>Meeting</th><th>Date</th><th>Attendees</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="meetingHistoryTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Templates -->
+      <div id="meeting-templates" class="hidden">
+        <div class="grid-3" id="templateGrid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE: MOM GENERATOR (Abu Dhabi Airports)
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-mom-generator">
+  <div style="padding-top:96px;min-height:100vh">
+    <div class="container">
+      <button class="back-btn" onclick="navigate('apps')"><svg width="16" height="16"><use href="#icon-chevron-left"/></svg> Apps</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:32px">
+        <div>
+          <div class="section-badge">ABU DHABI AIRPORTS</div>
+          <h1 class="section-title" style="font-size:36px">Meeting Minutes Manager</h1>
+        </div>
+        <button class="btn-primary btn-sm" onclick="createMOM()"><svg width="14" height="14"><use href="#icon-plus"/></svg> New Meeting</button>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid-4" style="margin-bottom:32px">
+        <div class="kpi-card"><div class="kpi-label">Total Meetings</div><div class="kpi-value text-neon" id="momTotal">0</div></div>
+        <div class="kpi-card"><div class="kpi-label">Drafts</div><div class="kpi-value" style="color:#ffc800" id="momDrafts">0</div></div>
+        <div class="kpi-card"><div class="kpi-label">Completed</div><div class="kpi-value" style="color:#00ff88" id="momCompleted">0</div></div>
+        <div class="kpi-card"><div class="kpi-label">This Week</div><div class="kpi-value text-neon">3</div></div>
+      </div>
+
+      <!-- Meetings List -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <h3 class="card-title">Recent Meetings</h3>
+          <select id="momAirportFilter" onchange="filterMOMmeetings()" style="width:160px"><option value="all">All Airports</option><option value="AUH">AUH</option><option value="AAN">AAN</option><option value="AZI">AZI</option><option value="DELMA">DELMA</option><option value="SIR">SIR</option></select>
+        </div>
+        <div class="table-wrapper" style="padding:0">
+          <table>
+            <thead><tr><th>Title</th><th>Airport</th><th>Date</th><th>Attendees</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="momTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE: AIRSIDE AUDITOR
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-airside-auditor">
+  <div style="padding-top:96px;min-height:100vh">
+    <div class="container">
+      <button class="back-btn" onclick="navigate('apps')"><svg width="16" height="16"><use href="#icon-chevron-left"/></svg> Apps</button>
+      <div class="text-center" style="margin-bottom:48px">
+        <div class="section-badge">AIRSIDE AUDITOR</div>
+        <h1 class="section-title" style="font-size:36px">AI Compliance Audit System</h1>
+        <p class="section-desc" style="margin:0 auto">Upload airside images for AI-powered compliance analysis against CAR regulations.</p>
+      </div>
+
+      <div class="tabs" id="auditorTabs">
+        <button class="tab active" onclick="auditorTab('audit')">New Audit</button>
+        <button class="tab" onclick="auditorTab('history')">Audit History</button>
+        <button class="tab" onclick="auditorTab('regulations')">Regulations</button>
+      </div>
+
+      <!-- New Audit -->
+      <div id="auditor-audit">
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom:16px">Capture / Upload Image</h3>
+            <div class="upload-zone" onclick="document.getElementById('auditImage').click()">
+              <svg width="48" height="48" style="stroke:var(--neon);margin:0 auto 16px"><use href="#icon-camera"/></svg>
+              <p style="font-size:14px;color:var(--text-dim);margin-bottom:8px">Click to upload airside photo</p>
+              <p style="font-size:12px;color:var(--text-muted)">JPEG, PNG up to 10MB</p>
+              <input type="file" id="auditImage" style="display:none" accept="image/*" onchange="previewAuditImage(this)" />
+            </div>
+            <div id="auditPreview" class="hidden" style="margin-top:12px">
+              <img id="auditPreviewImg" style="width:100%;border-radius:2px;border:1px solid var(--border)" />
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom:16px">Audit Details</h3>
+            <div class="form-group"><label class="form-label">Location</label><input type="text" id="auditLocation" placeholder="e.g., Runway 13L, Taxiway A" /></div>
+            <div class="form-group"><label class="form-label">Airport</label><select id="auditAirport"><option>AUH - Abu Dhabi Intl</option><option>AAN - Al Ain Intl</option><option>AZI - Al Bateen Exec</option><option>DXB - Dubai Intl</option></select></div>
+            <div class="form-group"><label class="form-label">Description</label><textarea id="auditDescription" placeholder="Describe the area being inspected..." style="min-height:80px"></textarea></div>
+            <button class="btn-primary neon-glow" onclick="runAudit()" style="width:100%">
+              <svg width="18" height="18"><use href="#icon-shield"/></svg> RUN COMPLIANCE AUDIT
+            </button>
+          </div>
+        </div>
+        <div id="auditResult" class="hidden" style="margin-top:32px"></div>
+      </div>
+
+      <!-- Audit History -->
+      <div id="auditor-history" class="hidden">
+        <div class="table-wrapper card" style="padding:0;overflow:hidden">
+          <table>
+            <thead><tr><th>Location</th><th>Airport</th><th>Date</th><th>Status</th><th>Risk</th></tr></thead>
+            <tbody id="auditHistoryTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Regulations -->
+      <div id="auditor-regulations" class="hidden">
+        <div class="grid-2" id="regulationsGrid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGES: INDUSTRY DASHBOARDS
+     ═══════════════════════════════════════════════════════════════ -->
+<!-- AVIATION -->
+<div class="page" id="page-aviation">
+  <div style="padding-top:96px;min-height:100vh">
+    <div class="container">
+      <button class="back-btn" onclick="navigate('home')"><svg width="16" height="16"><use href="#icon-chevron-left"/></svg> Home</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px">
+        <div><div class="section-badge"><svg width="14" height="14" style="stroke:var(--neon)"><use href="#icon-plane"/></svg> AVIATION AI</div>
+        <h1 class="section-title" style="font-size:32px">Aviation Dashboard</h1></div>
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/aviation-neon_1eb12042.jpg" alt="" style="width:80px;height:60px;object-fit:cover;border-radius:2px;border:1px solid var(--border);opacity:0.7" />
+      </div>
+      <div class="grid-4" style="margin-bottom:32px">
+        <div class="kpi-card"><div class="kpi-label">Active Flights</div><div class="kpi-value text-neon">47</div><div class="kpi-change up">+5 today</div></div>
+        <div class="kpi-card"><div class="kpi-label">Fleet Health</div><div class="kpi-value" style="color:#00ff88">94%</div></div>
+        <div class="kpi-card"><div class="kpi-label">Crew Alerts</div><div class="kpi-value" style="color:#ffc800">3</div></div>
+        <div class="kpi-card"><div class="kpi-label">GCAA Compliance</div><div class="kpi-value" style="color:#00ff88">100%</div></div>
+      </div>
+      <div class="grid-2" style="margin-bottom:32px">
+        <div class="card"><h3 class="card-title" style="margin-bottom:16px">Live Fleet Status</h3>
+          <div class="list-item"><div><strong>A320-214</strong> (A6-EIA)<br><span style="font-size:12px;color:var(--text-muted)">AUH → LHR | ETA 14:30</span></div><span class="badge badge-success">In Flight</span></div>
+          <div class="list-item"><div><strong>B777-300ER</strong> (A6-EPC)<br><span style="font-size:12px;color:var(--text-muted)">Gate C22 | Boarding</span></div><span class="badge badge-info">Boarding</span></div>
+          <div class="list-item"><div><strong>A350-900</strong> (A6-XWB)<br><span style="font-size:12px;color:var(--text-muted)">Maintenance Hangar 3</span></div><span class="badge badge-warning">Maintenance</span></div>
+          <div class="list-item"><div><strong>B787-9</strong> (A6-BLM)<br><span style="font-size:12px;color:var(--text-muted)">AUH → SIN | ETD 16:00</span></div><span class="badge badge-success">Ready</span></div>
+        </div>
+        <div class="card"><h3 class="card-title" style="margin-bottom:16px">Crew Fatigue Management</h3>
+          <div class="list-item"><div><strong>Capt. Ahmed R.</strong><br><span style="font-size:12px;color:var(--text-muted)">Duty: 8.5h | Rest required: 12h</span></div><span class="badge badge-success">OK</span></div>
+          <div class="list-item"><div><strong>FO Sarah M.</strong><br><span style="font-size:12px;color:var(--text-muted)">Duty: 11h | Approaching limit</span></div><span class="badge badge-warning">Warning</span></div>
+          <div class="list-item"><div><strong>Capt. James L.</strong><br><span style="font-size:12px;color:var(--text-muted)">Duty: 13h | Exceeded limit</span></div><span class="badge badge-danger">Alert</span></div>
+          <div class="list-item"><div><strong>FO Khalid A.</strong><br><span style="font-size:12px;color:var(--text-muted)">Duty: 6h | Fresh crew</span></div><span class="badge badge-success">OK</span></div>
+        </div>
+      </div>
+      <div class="card"><h3 class="card-title" style="margin-bottom:16px">Aircraft Health Monitoring</h3>
+        <div class="chart-bar" id="aircraftHealthChart"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONSTRUCTION -->
+<div class="page" id="page-construction">
+  <div style="padding-top:96px;min-height:100vh">
+    <div class="container">
+      <button class="back-btn" onclick="navigate('home')"><svg width="16" height="16"><use href="#icon-chevron-left"/></svg> Home</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px">
+        <div><div class="section-badge"><svg width="14" height="14" style="stroke:var(--neon)"><use href="#icon-hardhat"/></svg> CONSTRUCTION AI</div>
+        <h1 class="section-title" style="font-size:32px">Construction Dashboard</h1></div>
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/construction-neon_a24bf998.jpg" alt="" style="width:80px;height:60px;object-fit:cover;border-radius:2px;border:1px solid var(--border);opacity:0.7" />
+      </div>
+      <div class="grid-4" style="margin-bottom:32px">
+        <div class="kpi-card"><div class="kpi-label">Active Projects</div><div class="kpi-value text-neon">12</div></div>
+        <div class="kpi-card"><div class="kpi-label">Safety Score</div><div class="kpi-value" style="color:#00ff88">96%</div></div>
+        <div class="kpi-card"><div class="kpi-label">Incidents (MTD)</div><div class="kpi-value" style="color:#ffc800">2</div></div>
+        <div class="kpi-card"><div class="kpi-label">Budget Utilization</div><div class="kpi-value text-neon">78%</div></div>
+      </div>
+      <div class="grid-2" style="margin-bottom:32px">
+        <div class="card"><h3 class="card-title" style="margin-bottom:16px">Active Projects</h3>
+          <div class="list-item"><div><strong>Terminal 3 Expansion</strong><br><span style="font-size:12px;color:var(--text-muted)">AUH Airport | Phase 2</span></div><div style="text-align:right"><div style="font-size:14px;color:var(--neon)">67%</div><div style="width:100px;height:4px;background:rgba(var(--neon-rgb),0.2);border-radius:2px;margin-top:4px"><div style="width:67%;height:100%;background:var(--neon);border-radius:2px"></div></div></div></div>
+          <div class="list-item"><div><strong>Midfield Concourse</strong><br><span style="font-size:12px;color:var(--text-muted)">AUH Airport | Steel works</span></div><div style="text-align:right"><div style="font-size:14px;color:var(--neon)">45%</div><div style="width:100px;height:4px;background:rgba(var(--neon-rgb),0.2);border-radius:2px;margin-top:4px"><div style="width:45%;height:100%;background:var(--neon);border-radius:2px"></div></div></div></div>
+          <div class="list-item"><div><strong>Al Ain Tower</strong><br><span style="font-size:12px;color:var(--text-muted)">Commercial | Foundation</span></div><div style="text-align:right"><div style="font-size:14px;color:var(--neon)">23%</div><div style="width:100px;height:4px;background:rgba(var(--neon-rgb),0.2);border-radius:2px;margin-top:4px"><div style="width:23%;height:100%;background:var(--neon);border-radius:2px"></div></div></div></div>
+        </div>
+        <div class="card"><h3 class="card-title" style="margin-bottom:16px">Safety Monitoring</h3>
+          <div class="list-item"><div><strong>PPE Compliance</strong><br><span style="font-size:12px;color:var(--text-muted)">All sites combined</span></div><span class="badge badge-success">98%</span></div>
+          <div class="list-item"><div><strong>Heat Stress Protocol</strong><br><span style="font-size:12px;color:var(--text-muted)">Outdoor workers</span></div><span class="badge badge-warning">Active</span></div>
+          <div class="list-item"><div><strong>Fall Protection</strong><br><span style="font-size:12px;color:var(--text-muted)">High-rise sites</span></div><span class="badge badge-success">Compliant</span></div>
+          <div class="list-item"><div><strong>Fire Safety</strong><br><span style="font-size:12px;color:var(--text-muted)">All zones</span></div><span class="badge badge-success">Passed</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REAL ESTATE -->
+<div class="page" id="page-realestate">
+  <div style="padding-top:96px;min-height:100vh">
+    <div class="container">
+      <button class="back-btn" onclick="navigate('home')"><svg width="16" height="16"><use href="#icon-chevron-left"/></svg> Home</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px">
+        <div><div class="section-badge"><svg width="14" height="14" style="stroke:var(--neon)"><use href="#icon-building"/></svg> REAL ESTATE AI</div>
+        <h1 class="section-title" style="font-size:32px">Real Estate Dashboard</h1></div>
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/realestate-neon_e5981651.jpg" alt="" style="width:80px;height:60px;object-fit:cover;border-radius:2px;border:1px solid var(--border);opacity:0.7" />
+      </div>
+      <div class="grid-4" style="margin-bottom:32px">
+        <div class="kpi-card"><div class="kpi-label">Properties</div><div class="kpi-value text-neon">34</div></div>
+        <div class="kpi-card"><div class="kpi-label">Occupancy Rate</div><div class="kpi-value" style="color:#00ff88">91%</div></div>
+        <div class="kpi-card"><div class="kpi-label">Monthly Revenue</div><div class="kpi-value text-neon">$285K</div></div>
+        <div class="kpi-card"><div class="kpi-label">Avg AI Valuation</div><div class="kpi-value text-neon">$1.2M</div></div>
+      </div>
+      <div class="grid-2" style="margin-bottom:32px">
+        <div class="card"><h3 class="card-title" style="margin-bottom:16px">Property Portfolio</h3>
+          <div class="list-item"><div><strong>Marina Tower 2BR</strong><br><span style="font-size:12px;color:var(--text-muted)">Dubai Marina | Tenant: Active</span></div><div style="text-align:right"><span style="color:var(--neon)">AED 8,500/mo</span><br><span class="badge badge-success" style="margin-top:4px">Occupied</span></div></div>
+          <div class="list-item"><div><strong>JBR Studio</strong><br><span style="font-size:12px;color:var(--text-muted)">JBR | Short-term rental</span></div><div style="text-align:right"><span style="color:var(--neon)">AED 450/night</span><br><span class="badge badge-info" style="margin-top:4px">Listed</span></div></div>
+          <div class="list-item"><div><strong>Al Reem 3BR</strong><br><span style="font-size:12px;color:var(--text-muted)">Abu Dhabi | Lease expires Q2</span></div><div style="text-align:right"><span style="color:var(--neon)">AED 12,000/mo</span><br><span class="badge badge-warning" style="margin-top:4px">Renewing</span></div></div>
+          <div class="list-item"><div><strong>Makati Condo</strong><br><span style="font-size:12px;color:var(--text-muted)">Philippines | Long-term</span></div><div style="text-align:right"><span style="color:var(--neon)">PHP 35,000/mo</span><br><span class="badge badge-success" style="margin-top:4px">Occupied</span></div></div>
+        </div>
+        <div class="card"><h3 class="card-title" style="margin-bottom:16px">Tenant Screening Queue</h3>
+          <div class="list-item"><div><strong>Ahmad K.</strong><br><span style="font-size:12px;color:var(--text-muted)">Applied: Marina Tower 1BR</span></div><div><span class="badge badge-success">Score: 92</span></div></div>
+          <div class="list-item"><div><strong>Sarah L.</strong><br><span style="font-size:12px;color:var(--text-muted)">Applied: JBR 2BR</span></div><div><span class="badge badge-warning">Score: 74</span></div></div>
+          <div class="list-item"><div><strong>John M.</strong><br><span style="font-size:12px;color:var(--text-muted)">Applied: Al Reem Studio</span></div><div><span class="badge badge-success">Score: 88</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOSPITALITY -->
+<div class="page" id="page-hospitality">
+  <div style="padding-top:96px;min-height:100vh">
+    <div class="container">
+      <button class="back-btn" onclick="navigate('home')"><svg width="16" height="16"><use href="#icon-chevron-left"/></svg> Home</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px">
+        <div><div class="section-badge"><svg width="14" height="14" style="stroke:var(--neon)"><use href="#icon-utensils"/></svg> HOSPITALITY AI</div>
+        <h1 class="section-title" style="font-size:32px">Hospitality Dashboard</h1></div>
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663392017372/nVuCg4WifAzMTekgxtjBHN/hospitality-neon_d28c8822.jpg" alt="" style="width:80px;height:60px;object-fit:cover;border-radius:2px;border:1px solid var(--border);opacity:0.7" />
+      </div>
+      <div class="grid-4" style="margin-bottom:32px">
+        <div class="kpi-card"><div class="kpi-label">Daily Revenue</div><div class="kpi-value text-neon">$4,250</div><div class="kpi-change up">+18%</div></div>
+        <div class="kpi-card"><div class="kpi-label">Orders Today</div><div class="kpi-value text-neon">89</div></div>
+        <div class="kpi-card"><div class="kpi-label">Low Stock Items</div><div class="kpi-value" style="color:#ffc800">5</div></div>
+        <div class="kpi-card"><div class="kpi-label">Food Cost %</div><div class="kpi-value" style="color:#00ff88">28%</div></div>
+      </div>
+      <div class="grid-2" style="margin-bottom:32px">
+        <div class="card"><h3 class="card-title" style="margin-bottom:16px">Menu Performance</h3>
+          <div class="list-item"><div><strong>Grilled Wagyu Steak</strong><br><span style="font-size:12px;color:var(--text-muted)">Margin: 72% | Orders: 23</span></div><span class="badge badge-success">Top Seller</span></div>
+          <div class="list-item"><div><strong>Truffle Pasta</strong><br><span style="font-size:12px;color:var(--text-muted)">Margin: 65% | Orders: 18</span></div><span class="badge badge-success">Popular</span></div>
+          <div class="list-item"><div><strong>Caesar Salad</strong><br><span style="font-size:12px;color:var(--text-muted)">Margin: 80% | Orders: 15</span></div><span class="badge badge-info">High Margin</span></div>
+          <div class="list-item"><div><strong>Lobster Thermidor</strong><br><span style="font-size:12px;color:var(--text-muted)">Margin: 45% | Orders: 4</span></div><span class="badge badge-warning">Low Volume</span></div>
+        </div>
+        <div class="card"><h3 class="card-title" style="margin-bottom:16px">Low Stock Alerts</h3>
+          <div class="list-item"><div><strong>Fresh Salmon</strong><br><span style="font-size:12px;color:var(--text-muted)">2.5 kg remaining</span></div><span class="badge badge-danger">Critical</span></div>
+          <div class="list-item"><div><strong>Wagyu Beef</strong><br><span style="font-size:12px;color:var(--text-muted)">3 portions left</span></div><span class="badge badge-danger">Critical</span></div>
+          <div class="list-item"><div><strong>Truffle Oil</strong><br><span style="font-size:12px;color:var(--text-muted)">1 bottle remaining</span></div><span class="badge badge-warning">Low</span></div>
+          <div class="list-item"><div><strong>Premium Olive Oil</strong><br><span style="font-size:12px;color:var(--text-muted)">2 liters remaining</span></div><span class="badge badge-warning">Low</span></div>
+          <div class="list-item"><div><strong>Parmesan Cheese</strong><br><span style="font-size:12px;color:var(--text-muted)">0.5 kg remaining</span></div><span class="badge badge-danger">Critical</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     JAVASCRIPT APPLICATION LOGIC
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+// ─── NAVIGATION ───
+let currentPage = 'home';
+
+function navigate(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + page);
+  if (target) { target.classList.add('active'); currentPage = page; }
+  window.scrollTo(0, 0);
+  document.querySelectorAll('.nav-link').forEach(l => {
+    l.classList.toggle('active', l.dataset.nav === page);
+  });
+  if (page === 'apps') renderAppsGrid();
+  if (page === 'ai-tracker') initAITracker();
+  if (page === 'law-firm') initLawFirm();
+  if (page === 'meeting-minutes') initMeetingMinutes();
+  if (page === 'mom-generator') initMOM();
+  if (page === 'airside-auditor') initAirsideAuditor();
+  if (page === 'aviation') initAviationChart();
+  window.location.hash = page;
+}
+
+function scrollToEl(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Hash routing
+window.addEventListener('hashchange', () => {
+  const hash = window.location.hash.slice(1);
+  if (hash && hash !== currentPage) navigate(hash);
+});
+window.addEventListener('load', () => {
+  const hash = window.location.hash.slice(1);
+  if (hash) navigate(hash);
+});
+
+// Toast
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.className = 'toast'; t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => { t.classList.add('hide'); setTimeout(() => t.remove(), 300); }, 3000);
+}
+
+// ─── START JOURNEY ───
+let journeyStep = 1;
+let selectedIndustry = '';
+
+function selectIndustry(ind) {
+  selectedIndustry = ind;
+  journeyStep = 2;
+  updateJourneyUI();
+}
+function journeyNext() { journeyStep++; updateJourneyUI(); }
+function journeyBack() { journeyStep--; updateJourneyUI(); }
+function updateJourneyUI() {
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById('journey-step-' + i).classList.toggle('hidden', i !== journeyStep);
+    const step = document.querySelector(`.progress-step[data-step="${i}"]`);
+    step.classList.remove('active', 'completed');
+    if (i < journeyStep) step.classList.add('completed');
+    else if (i === journeyStep) step.classList.add('active');
+  }
+}
+function completeJourney() {
+  showToast('Account created! Redirecting to dashboard...');
+  setTimeout(() => navigate(selectedIndustry || 'home'), 1500);
+}
+
+// ─── APPS DIRECTORY ───
+const allApps = [
+  { id:'ai-tracker', name:'AI Apps Directory', desc:'Discover and track AI applications across industries with analytics.', icon:'icon-search', category:'Productivity', tags:['Search','Analytics','Trends'] },
+  { id:'law-firm', name:'Law Firm Automation', desc:'Comprehensive legal practice management with AI document automation.', icon:'icon-scale', category:'Legal', tags:['Legal','Billing','Documents'] },
+  { id:'meeting-minutes', name:'Meeting Minutes Generator', desc:'Upload transcripts, get professional meeting minutes with AI.', icon:'icon-file-text', category:'Productivity', tags:['AI Analysis','Export','Templates'] },
+  { id:'mom-generator', name:'MOM Generator', desc:'Meeting minutes manager for Abu Dhabi Airports multi-terminal.', icon:'icon-clipboard', category:'Aviation', tags:['AUH','Airports','Meetings'] },
+  { id:'airside-auditor', name:'Airside Auditor', desc:'AI-powered compliance audit system for airport airside operations.', icon:'icon-camera', category:'Aviation', tags:['Compliance','Inspection','CAR'] },
+  { id:'aviation', name:'Aviation AI Dashboard', desc:'Real-time fleet status, crew fatigue management, and aircraft health.', icon:'icon-plane', category:'Aviation', tags:['Fleet','Crew','GCAA'] },
+  { id:'construction', name:'Construction AI Dashboard', desc:'Active project tracking, safety monitoring, and budget control.', icon:'icon-hardhat', category:'Construction', tags:['Projects','Safety','Budget'] },
+  { id:'realestate', name:'Real Estate AI Dashboard', desc:'Property portfolio, tenant screening, and AI valuations.', icon:'icon-building', category:'Real Estate', tags:['Properties','Tenants','Valuation'] },
+  { id:'hospitality', name:'Hospitality AI Dashboard', desc:'Menu engineering, inventory alerts, and revenue optimization.', icon:'icon-utensils', category:'Hospitality', tags:['Menu','Inventory','Revenue'] },
+];
+
+function renderAppsGrid() {
+  const q = (document.getElementById('appSearch')?.value || '').toLowerCase();
+  const filtered = allApps.filter(a => !q || a.name.toLowerCase().includes(q) || a.desc.toLowerCase().includes(q) || a.category.toLowerCase().includes(q));
+  document.getElementById('appGrid').innerHTML = filtered.map(a => `
+    <div class="card" style="cursor:pointer" onclick="navigate('${a.id}')">
+      <div class="icon-box" style="margin-bottom:16px"><svg><use href="#${a.icon}"/></svg></div>
+      <span class="badge badge-info" style="margin-bottom:8px">${a.category}</span>
+      <h3 class="card-title">${a.name}</h3>
+      <p class="card-desc">${a.desc}</p>
+      <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px">${a.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+    </div>
+  `).join('');
+}
+function filterApps() { renderAppsGrid(); }
+
+// ─── AI TRACKER ───
+const aiAppsData = [
+  { name:'ChatGPT', desc:'OpenAI conversational AI assistant', category:'LLM', rating:4.8, trend:95, price:'Freemium', isNew:false },
+  { name:'Midjourney', desc:'AI image generation from text prompts', category:'Image Gen', rating:4.7, trend:88, price:'$10/mo', isNew:false },
+  { name:'GitHub Copilot', desc:'AI pair programming assistant', category:'Code', rating:4.6, trend:82, price:'$10/mo', isNew:false },
+  { name:'Claude', desc:'Anthropic safe and helpful AI', category:'LLM', rating:4.9, trend:91, price:'Freemium', isNew:true },
+  { name:'Gemini', desc:'Google multimodal AI model', category:'LLM', rating:4.5, trend:80, price:'Free', isNew:true },
+  { name:'Suno AI', desc:'AI music generation platform', category:'Audio', rating:4.3, trend:75, price:'Freemium', isNew:true },
+  { name:'Runway ML', desc:'AI video editing and generation', category:'Video', rating:4.4, trend:70, price:'$12/mo', isNew:false },
+  { name:'Jasper AI', desc:'AI marketing content creation', category:'Writing', rating:4.2, trend:65, price:'$39/mo', isNew:false },
+  { name:'Perplexity', desc:'AI-powered search engine', category:'Search', rating:4.6, trend:85, price:'Freemium', isNew:true },
+  { name:'ElevenLabs', desc:'AI voice cloning and synthesis', category:'Audio', rating:4.5, trend:78, price:'Freemium', isNew:false },
+  { name:'Cursor', desc:'AI-first code editor', category:'Code', rating:4.7, trend:90, price:'$20/mo', isNew:true },
+  { name:'Notion AI', desc:'AI writing assistant for Notion', category:'Productivity', rating:4.3, trend:60, price:'$8/mo', isNew:false },
+];
+
+function initAITracker() {
+  document.getElementById('totalApps').textContent = aiAppsData.length;
+  renderAIApps(aiAppsData);
+  renderCategoryChart();
+  renderTrendingChart();
+}
+
+function renderAIApps(apps) {
+  document.getElementById('aiAppsGrid').innerHTML = apps.map(a => `
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px">
+        <h3 class="card-title">${a.name}</h3>
+        ${a.isNew ? '<span class="badge badge-success">New</span>' : ''}
+      </div>
+      <p class="card-desc" style="margin-bottom:12px">${a.desc}</p>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span class="tag">${a.category}</span>
+        <div style="display:flex;align-items:center;gap:4px">
+          <svg width="14" height="14" style="stroke:#ffc800;fill:#ffc800"><use href="#icon-star"/></svg>
+          <span style="font-size:13px;color:var(--neon)">${a.rating}</span>
+        </div>
+      </div>
+      <div style="margin-top:8px;font-size:12px;color:var(--text-muted)">${a.price}</div>
+    </div>
+  `).join('');
+}
+
+function filterAIApps() {
+  const q = document.getElementById('aiTrackerSearch').value.toLowerCase();
+  renderAIApps(aiAppsData.filter(a => a.name.toLowerCase().includes(q) || a.desc.toLowerCase().includes(q) || a.category.toLowerCase().includes(q)));
+}
+
+function renderCategoryChart() {
+  const cats = {};
+  aiAppsData.forEach(a => { cats[a.category] = (cats[a.category] || 0) + 1; });
+  const el = document.getElementById('categoryChart');
+  el.innerHTML = Object.entries(cats).map(([k, v]) => `
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <span style="font-size:12px;color:var(--text-dim);width:80px">${k}</span>
+      <div style="flex:1;height:20px;background:rgba(var(--neon-rgb),0.1);border-radius:2px">
+        <div style="width:${(v/aiAppsData.length)*100}%;height:100%;background:linear-gradient(90deg,rgba(var(--neon-rgb),0.4),var(--neon));border-radius:2px"></div>
+      </div>
+      <span style="font-size:12px;color:var(--neon);width:24px">${v}</span>
+    </div>
+  `).join('');
+}
+
+function renderTrendingChart() {
+  const sorted = [...aiAppsData].sort((a,b) => b.trend - a.trend).slice(0, 6);
+  document.getElementById('trendingChart').innerHTML = sorted.map(a =>
+    `<div class="chart-bar-item" style="height:${a.trend}%"><span class="chart-bar-label">${a.name.split(' ')[0]}</span></div>`
+  ).join('');
+}
+
+// ─── LAW FIRM ───
+const lawClients = [
+  { name:'Acme Corporation', type:'Corporate', matters:3, status:'Active' },
+  { name:'Johnson Family Trust', type:'Estate', matters:1, status:'Active' },
+  { name:'Al Futtaim Group', type:'Corporate', matters:2, status:'Active' },
+  { name:'Sarah Williams', type:'Individual', matters:1, status:'Active' },
+  { name:'Emirates Holdings', type:'Corporate', matters:4, status:'Active' },
+];
+const lawMatters = [
+  { name:'Johnson v. Smith', client:'Johnson Family Trust', area:'Litigation', status:'Active', deadline:'Apr 11' },
+  { name:'Acme Acquisition', client:'Acme Corporation', area:'Corporate', status:'Active', deadline:'Apr 15' },
+  { name:'IP Patent Filing', client:'Al Futtaim Group', area:'IP Law', status:'Pending', deadline:'Apr 20' },
+  { name:'Estate Planning', client:'Sarah Williams', area:'Family Law', status:'Draft', deadline:'May 1' },
+];
+
+function initLawFirm() {
+  document.getElementById('lawDate').textContent = new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+  renderLawTables();
+  renderRevenueChart();
+  renderPracticeChart();
+}
+
+function lawTab(tab) {
+  ['dashboard','clients','matters','documents','billing','research'].forEach(t => {
+    const el = document.getElementById('law-' + t);
+    if (el) el.classList.toggle('hidden', t !== tab);
+  });
+  document.querySelectorAll('#page-law-firm .sidebar-link').forEach(l => l.classList.remove('active'));
+  event.target.closest('.sidebar-link')?.classList.add('active');
+}
+
+function renderLawTables() {
+  document.getElementById('clientsTable').innerHTML = lawClients.map(c => `
+    <tr><td><strong>${c.name}</strong></td><td>${c.type}</td><td>${c.matters}</td><td><span class="badge badge-success">${c.status}</span></td><td><button class="btn-primary btn-sm" style="padding:4px 8px;font-size:11px">View</button></td></tr>
+  `).join('');
+  document.getElementById('mattersTable').innerHTML = lawMatters.map(m => `
+    <tr><td><strong>${m.name}</strong></td><td>${m.client}</td><td><span class="tag">${m.area}</span></td><td><span class="badge badge-${m.status==='Active'?'success':m.status==='Pending'?'warning':'info'}">${m.status}</span></td><td>${m.deadline}</td></tr>
+  `).join('');
+  document.getElementById('documentsTable').innerHTML = [
+    ['Motion to Dismiss','Legal Brief','Johnson v. Smith','Apr 5'],
+    ['Share Purchase Agreement','Contract','Acme Acquisition','Apr 3'],
+    ['Patent Application','Filing','IP Patent','Apr 1'],
+    ['Will & Testament','Estate Doc','Estate Planning','Mar 28'],
+  ].map(d => `<tr><td><strong>${d[0]}</strong></td><td><span class="tag">${d[1]}</span></td><td>${d[2]}</td><td>${d[3]}</td><td><button class="btn-primary btn-sm" style="padding:4px 8px;font-size:11px"><svg width="12" height="12"><use href="#icon-download"/></svg></button></td></tr>`).join('');
+  document.getElementById('billingTable').innerHTML = [
+    ['INV-2024-047','Acme Corporation','$15,000','Paid','Apr 1'],
+    ['INV-2024-048','Johnson Family','$8,500','Pending','Apr 15'],
+    ['INV-2024-049','Al Futtaim Group','$22,000','Paid','Mar 30'],
+    ['INV-2024-050','Emirates Holdings','$12,200','Overdue','Mar 25'],
+  ].map(b => `<tr><td><strong>${b[0]}</strong></td><td>${b[1]}</td><td style="color:var(--neon)">${b[2]}</td><td><span class="badge badge-${b[3]==='Paid'?'success':b[3]==='Pending'?'warning':'danger'}">${b[3]}</span></td><td>${b[4]}</td></tr>`).join('');
+}
+
+function renderRevenueChart() {
+  const months = ['Oct','Nov','Dec','Jan','Feb','Mar'];
+  const values = [35, 42, 38, 45, 41, 47];
+  document.getElementById('revenueChart').innerHTML = values.map((v,i) =>
+    `<div class="chart-bar-item" style="height:${(v/50)*100}%"><span class="chart-bar-label">${months[i]}</span></div>`
+  ).join('');
+}
+
+function renderPracticeChart() {
+  const areas = [['Corporate','35%','35'],['Litigation','25%','25'],['Real Estate','20%','20'],['Family Law','12%','12'],['IP Law','8%','8']];
+  document.getElementById('practiceChart').innerHTML = areas.map(a => `
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="font-size:12px;color:var(--text-dim);width:80px">${a[0]}</span>
+      <div style="flex:1;height:16px;background:rgba(var(--neon-rgb),0.1);border-radius:2px">
+        <div style="width:${a[2]}%;height:100%;background:linear-gradient(90deg,rgba(var(--neon-rgb),0.4),var(--neon));border-radius:2px"></div>
+      </div>
+      <span style="font-size:12px;color:var(--neon)">${a[1]}</span>
+    </div>
+  `).join('');
+}
+
+function addLawClient() { showToast('New client form opened'); }
+function addLawMatter() { showToast('New matter form opened'); }
+function performResearch() {
+  const q = document.getElementById('researchQuery').value;
+  if (!q) { showToast('Please enter a research query'); return; }
+  document.getElementById('researchResults').innerHTML = `
+    <div class="card animate-fade-up">
+      <h3 class="card-title" style="margin-bottom:12px"><svg width="18" height="18" style="stroke:var(--neon);vertical-align:middle;margin-right:8px"><use href="#icon-brain"/></svg>AI Research Results</h3>
+      <div style="padding:16px;background:rgba(var(--neon-rgb),0.04);border-radius:2px;border:1px solid var(--border)">
+        <p style="font-size:14px;color:var(--text-dim);line-height:1.8;margin-bottom:16px">Based on the query "<strong style="color:var(--text)">${q}</strong>", the AI has identified the following relevant legal precedents and statutes:</p>
+        <div class="list-item"><div><strong>UAE Federal Law No. 5 of 1985</strong><br><span style="font-size:12px;color:var(--text-muted)">Civil Transactions Code - Relevant provisions on contractual obligations</span></div><span class="badge badge-info">High Relevance</span></div>
+        <div class="list-item"><div><strong>Dubai Court of Cassation Case 234/2023</strong><br><span style="font-size:12px;color:var(--text-muted)">Landmark decision on commercial disputes and arbitration clauses</span></div><span class="badge badge-info">Medium Relevance</span></div>
+        <div class="list-item"><div><strong>DIFC Courts Practice Direction No. 2</strong><br><span style="font-size:12px;color:var(--text-muted)">Procedural guidelines for commercial claim filings</span></div><span class="badge badge-info">Medium Relevance</span></div>
+      </div>
+    </div>
+  `;
+}
+
+// ─── MEETING MINUTES ───
+let meetingHistory = JSON.parse(localStorage.getItem('sv_meetings') || '[]');
+
+function initMeetingMinutes() {
+  document.getElementById('meetingDate').value = new Date().toISOString().split('T')[0];
+  renderMeetingHistory();
+  renderTemplates();
+}
+
+function meetingTab(tab) {
+  ['new','history','templates'].forEach(t => {
+    const el = document.getElementById('meeting-' + t);
+    if (el) el.classList.toggle('hidden', t !== tab);
+  });
+  document.querySelectorAll('#meetingTabs .tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+function handleMeetingFile(file) {
+  if (!file) return;
+  document.getElementById('meetingFileName').textContent = file.name + ' (' + (file.size/1024).toFixed(1) + ' KB)';
+  document.getElementById('meetingFileInfo').classList.remove('hidden');
+}
+
+function generateMinutes() {
+  const title = document.getElementById('meetingTitle').value || 'Untitled Meeting';
+  const date = document.getElementById('meetingDate').value;
+  const attendees = document.getElementById('meetingAttendees').value || 'No attendees listed';
+  const notes = document.getElementById('meetingNotes').value || 'No transcript provided';
+
+  const meeting = { id: Date.now(), title, date, attendees, notes, status: 'Completed', generated: new Date().toISOString() };
+  meetingHistory.unshift(meeting);
+  localStorage.setItem('sv_meetings', JSON.stringify(meetingHistory));
+
+  document.getElementById('minutesResult').classList.remove('hidden');
+  document.getElementById('minutesResult').innerHTML = `
+    <div class="card animate-fade-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <h3 class="card-title" style="font-size:20px"><svg width="20" height="20" style="stroke:var(--neon);vertical-align:middle;margin-right:8px"><use href="#icon-file-text"/></svg>Generated Meeting Minutes</h3>
+        <span class="badge badge-success">AI Generated</span>
+      </div>
+      <div style="padding:24px;background:rgba(var(--neon-rgb),0.03);border:1px solid var(--border);border-radius:2px">
+        <h4 style="font-family:var(--font-heading);font-size:18px;color:var(--neon);margin-bottom:16px">${title}</h4>
+        <div style="display:flex;gap:24px;margin-bottom:20px;font-size:13px;color:var(--text-dim)">
+          <span><strong>Date:</strong> ${date}</span>
+          <span><strong>Attendees:</strong> ${attendees}</span>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:16px">
+          <h5 style="color:var(--neon);font-size:13px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px">Key Discussion Points</h5>
+          <ul style="list-style:disc;padding-left:20px;color:var(--text-dim);font-size:14px;line-height:2">
+            <li>Review of current project milestones and deliverables</li>
+            <li>Discussion on resource allocation for Q2 initiatives</li>
+            <li>Updates on pending client communications</li>
+          </ul>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:16px;margin-top:16px">
+          <h5 style="color:var(--neon);font-size:13px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px">Action Items</h5>
+          <ul style="list-style:none;padding:0;color:var(--text-dim);font-size:14px;line-height:2">
+            <li style="display:flex;align-items:center;gap:8px"><svg width="14" height="14" style="stroke:#00ff88"><use href="#icon-check"/></svg> Follow up on outstanding deliverables by end of week</li>
+            <li style="display:flex;align-items:center;gap:8px"><svg width="14" height="14" style="stroke:#00ff88"><use href="#icon-check"/></svg> Schedule individual reviews with team leads</li>
+            <li style="display:flex;align-items:center;gap:8px"><svg width="14" height="14" style="stroke:#00ff88"><use href="#icon-check"/></svg> Prepare Q2 budget proposal for executive review</li>
+          </ul>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:16px;margin-top:16px">
+          <h5 style="color:var(--neon);font-size:13px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px">Decisions Made</h5>
+          <ul style="list-style:disc;padding-left:20px;color:var(--text-dim);font-size:14px;line-height:2">
+            <li>Approved additional resources for Phase 2 development</li>
+            <li>Agreed to bi-weekly check-ins starting next sprint</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:16px;display:flex;gap:12px">
+        <button class="btn-primary btn-sm"><svg width="14" height="14"><use href="#icon-download"/></svg> Export DOCX</button>
+        <button class="btn-secondary btn-sm" onclick="showToast('Copied to clipboard!')">Copy to Clipboard</button>
+      </div>
+    </div>
+  `;
+  showToast('Meeting minutes generated successfully!');
+}
+
+function renderMeetingHistory() {
+  const tb = document.getElementById('meetingHistoryTable');
+  if (!meetingHistory.length) {
+    tb.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px;color:var(--text-muted)">No meetings recorded yet. Create your first meeting!</td></tr>';
+    return;
+  }
+  tb.innerHTML = meetingHistory.map(m => `
+    <tr><td><strong>${m.title}</strong></td><td>${m.date}</td><td>${m.attendees}</td><td><span class="badge badge-success">${m.status}</span></td><td><button class="btn-primary btn-sm" style="padding:4px 8px;font-size:11px"><svg width="12" height="12"><use href="#icon-download"/></svg></button></td></tr>
+  `).join('');
+}
+
+function renderTemplates() {
+  const templates = [
+    { name:'Standard Meeting', desc:'General purpose meeting minutes template with action items and decisions.', icon:'icon-file-text' },
+    { name:'Board Meeting', desc:'Formal board meeting template with voting records and resolutions.', icon:'icon-users' },
+    { name:'Sprint Review', desc:'Agile sprint review template with demo notes and backlog updates.', icon:'icon-zap' },
+    { name:'Client Meeting', desc:'Client-facing meeting template with follow-up commitments.', icon:'icon-briefcase' },
+    { name:'Safety Meeting', desc:'Safety briefing template with incident reports and compliance items.', icon:'icon-shield' },
+    { name:'Project Kickoff', desc:'New project kickoff template with scope, timeline, and responsibilities.', icon:'icon-trending-up' },
+  ];
+  document.getElementById('templateGrid').innerHTML = templates.map(t => `
+    <div class="card" style="cursor:pointer" onclick="showToast('Template loaded: ${t.name}')">
+      <div class="icon-box" style="margin-bottom:16px"><svg><use href="#${t.icon}"/></svg></div>
+      <h3 class="card-title">${t.name}</h3>
+      <p class="card-desc">${t.desc}</p>
+    </div>
+  `).join('');
+}
+
+// ─── MOM GENERATOR ───
+let momMeetings = JSON.parse(localStorage.getItem('sv_mom') || '[]');
+if (!momMeetings.length) {
+  momMeetings = [
+    { id:1, title:'Terminal Safety Review', airport:'AUH', date:'2024-04-08', attendees:'12', status:'Completed' },
+    { id:2, title:'Runway Maintenance Plan', airport:'AUH', date:'2024-04-07', attendees:'8', status:'Completed' },
+    { id:3, title:'NPA Compliance Briefing', airport:'AAN', date:'2024-04-06', attendees:'6', status:'Draft' },
+    { id:4, title:'Emergency Response Drill', airport:'AZI', date:'2024-04-05', attendees:'15', status:'Completed' },
+    { id:5, title:'Airside Operations Update', airport:'DELMA', date:'2024-04-04', attendees:'5', status:'Draft' },
+    { id:6, title:'Annual Safety Audit', airport:'SIR', date:'2024-04-03', attendees:'10', status:'In Progress' },
+  ];
+  localStorage.setItem('sv_mom', JSON.stringify(momMeetings));
+}
+
+function initMOM() {
+  document.getElementById('momTotal').textContent = momMeetings.length;
+  document.getElementById('momDrafts').textContent = momMeetings.filter(m => m.status === 'Draft').length;
+  document.getElementById('momCompleted').textContent = momMeetings.filter(m => m.status === 'Completed').length;
+  renderMOMTable(momMeetings);
+}
+
+function renderMOMTable(meetings) {
+  document.getElementById('momTable').innerHTML = meetings.map(m => `
+    <tr>
+      <td><strong>${m.title}</strong></td>
+      <td><span class="badge badge-info">${m.airport}</span></td>
+      <td>${m.date}</td>
+      <td>${m.attendees}</td>
+      <td><span class="badge badge-${m.status==='Completed'?'success':m.status==='Draft'?'warning':'info'}">${m.status}</span></td>
+      <td>
+        <button class="btn-primary btn-sm" style="padding:4px 8px;font-size:11px" onclick="showToast('Opening: ${m.title}')">
+          <svg width="12" height="12"><use href="#icon-edit"/></svg>
+        </button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function filterMOMmeetings() {
+  const airport = document.getElementById('momAirportFilter').value;
+  renderMOMTable(airport === 'all' ? momMeetings : momMeetings.filter(m => m.airport === airport));
+}
+
+function createMOM() {
+  const title = prompt('Meeting Title:');
+  if (!title) return;
+  const m = { id: Date.now(), title, airport:'AUH', date:new Date().toISOString().split('T')[0], attendees:'0', status:'Draft' };
+  momMeetings.unshift(m);
+  localStorage.setItem('sv_mom', JSON.stringify(momMeetings));
+  initMOM();
+  showToast('Meeting created: ' + title);
+}
+
+// ─── AIRSIDE AUDITOR ───
+let auditHistory = JSON.parse(localStorage.getItem('sv_audits') || '[]');
+
+function initAirsideAuditor() {
+  renderAuditHistory();
+  renderRegulations();
+}
+
+function auditorTab(tab) {
+  ['audit','history','regulations'].forEach(t => {
+    const el = document.getElementById('auditor-' + t);
+    if (el) el.classList.toggle('hidden', t !== tab);
+  });
+  document.querySelectorAll('#auditorTabs .tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+function previewAuditImage(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById('auditPreviewImg').src = e.target.result;
+      document.getElementById('auditPreview').classList.remove('hidden');
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function runAudit() {
+  const location = document.getElementById('auditLocation').value || 'Unknown Location';
+  const airport = document.getElementById('auditAirport').value.split(' - ')[0];
+  const desc = document.getElementById('auditDescription').value;
+
+  const statuses = ['COMPLIANT','WARNING','NON-COMPLIANT'];
+  const risks = ['LOW','MEDIUM','HIGH'];
+  const status = statuses[Math.floor(Math.random() * 3)];
+  const risk = status === 'COMPLIANT' ? 'LOW' : status === 'WARNING' ? 'MEDIUM' : 'HIGH';
+
+  const audit = { id:Date.now(), location, airport, date:new Date().toISOString().split('T')[0], status, risk, desc };
+  auditHistory.unshift(audit);
+  localStorage.setItem('sv_audits', JSON.stringify(auditHistory));
+
+  const statusClass = status === 'COMPLIANT' ? 'success' : status === 'WARNING' ? 'warning' : 'danger';
+  const riskClass = risk === 'LOW' ? 'success' : risk === 'MEDIUM' ? 'warning' : 'danger';
+
+  document.getElementById('auditResult').classList.remove('hidden');
+  document.getElementById('auditResult').innerHTML = `
+    <div class="card animate-fade-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <h3 class="card-title" style="font-size:20px"><svg width="20" height="20" style="stroke:var(--neon);vertical-align:middle;margin-right:8px"><use href="#icon-shield"/></svg>Audit Results</h3>
+        <span class="badge badge-${statusClass}" style="font-size:13px;padding:6px 16px">${status}</span>
+      </div>
+      <div class="grid-3" style="margin-bottom:20px">
+        <div class="kpi-card"><div class="kpi-label">Location</div><div style="font-size:16px;font-weight:700;margin-top:4px">${location}</div></div>
+        <div class="kpi-card"><div class="kpi-label">Risk Level</div><div><span class="badge badge-${riskClass}" style="font-size:14px;margin-top:8px;display:inline-block">${risk}</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">Airport</div><div style="font-size:16px;font-weight:700;margin-top:4px">${airport}</div></div>
+      </div>
+      <div style="padding:16px;background:rgba(var(--neon-rgb),0.04);border:1px solid var(--border);border-radius:2px">
+        <h4 style="color:var(--neon);font-size:13px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px">Findings</h4>
+        <div class="list-item"><div><strong>Surface Condition</strong><br><span style="font-size:12px;color:var(--text-muted)">CAR-AGA 3.1.23 - Pavement surface integrity</span></div><span class="badge badge-${statusClass}">${status === 'COMPLIANT' ? 'Pass' : 'Review'}</span></div>
+        <div class="list-item"><div><strong>Markings Visibility</strong><br><span style="font-size:12px;color:var(--text-muted)">CAR-AGA 5.2.1 - Runway/taxiway markings</span></div><span class="badge badge-success">Pass</span></div>
+        <div class="list-item"><div><strong>FOD Control</strong><br><span style="font-size:12px;color:var(--text-muted)">CAR-AGA 9.4 - Foreign Object Debris</span></div><span class="badge badge-${status === 'NON-COMPLIANT' ? 'danger' : 'success'}">${status === 'NON-COMPLIANT' ? 'Fail' : 'Pass'}</span></div>
+      </div>
+      ${status !== 'COMPLIANT' ? `
+      <div style="margin-top:16px;padding:16px;background:rgba(255,68,68,0.06);border:1px solid rgba(255,68,68,0.2);border-radius:2px">
+        <h4 style="color:#ff4444;font-size:13px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">Corrective Actions Required</h4>
+        <ul style="list-style:disc;padding-left:20px;color:var(--text-dim);font-size:13px;line-height:2">
+          <li>Schedule immediate re-inspection within 48 hours</li>
+          <li>Submit corrective action report to GCAA within 7 days</li>
+          <li>Update maintenance log with findings and remediation plan</li>
+        </ul>
+      </div>` : ''}
+    </div>
+  `;
+  showToast('Audit completed for ' + location);
+}
+
+function renderAuditHistory() {
+  const tb = document.getElementById('auditHistoryTable');
+  if (!auditHistory.length) {
+    tb.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px;color:var(--text-muted)">No audits recorded yet.</td></tr>';
+    return;
+  }
+  tb.innerHTML = auditHistory.map(a => `
+    <tr>
+      <td><strong>${a.location}</strong></td>
+      <td>${a.airport}</td>
+      <td>${a.date}</td>
+      <td><span class="badge badge-${a.status==='COMPLIANT'?'success':a.status==='WARNING'?'warning':'danger'}">${a.status}</span></td>
+      <td><span class="badge badge-${a.risk==='LOW'?'success':a.risk==='MEDIUM'?'warning':'danger'}">${a.risk}</span></td>
+    </tr>
+  `).join('');
+}
+
+function renderRegulations() {
+  const regs = [
+    { code:'CAR-AGA 3.1', title:'Runway Surface Requirements', desc:'Standards for runway pavement surface conditions, load-bearing capacity, and drainage.' },
+    { code:'CAR-AGA 5.2', title:'Aerodrome Markings', desc:'Requirements for runway, taxiway, and apron markings including colors, dimensions, and visibility.' },
+    { code:'CAR-AGA 9.4', title:'FOD Prevention', desc:'Foreign Object Debris detection, prevention programs, and reporting procedures.' },
+    { code:'CAR-AGA 6.1', title:'Lighting Systems', desc:'Approach, runway, and taxiway lighting standards including intensity and serviceability.' },
+    { code:'CAR-AGA 8.2', title:'Wildlife Management', desc:'Bird and wildlife hazard management programs and strike reporting.' },
+    { code:'CAR-AGA 10.1', title:'Emergency Response', desc:'Rescue and firefighting requirements, response times, and equipment standards.' },
+  ];
+  document.getElementById('regulationsGrid').innerHTML = regs.map(r => `
+    <div class="card">
+      <span class="badge badge-info" style="margin-bottom:12px">${r.code}</span>
+      <h3 class="card-title">${r.title}</h3>
+      <p class="card-desc">${r.desc}</p>
+    </div>
+  `).join('');
+}
+
+// ─── AVIATION CHART ───
+function initAviationChart() {
+  const aircraft = ['A320','B777','A350','B787','A380','B737'];
+  const health = [94, 98, 87, 96, 92, 99];
+  document.getElementById('aircraftHealthChart').innerHTML = health.map((h,i) =>
+    `<div class="chart-bar-item" style="height:${h}%;background:linear-gradient(to top,${h>90?'rgba(0,255,136,0.3),#00ff88':'rgba(255,200,0,0.3),#ffc800'})"><span class="chart-bar-label">${aircraft[i]}</span></div>`
+  ).join('');
+}
+
+// ─── RESPONSIVE HERO ───
+function handleResize() {
+  const heroGrid = document.querySelector('.hero .hero-content > div');
+  if (heroGrid && window.innerWidth < 768) {
+    heroGrid.style.gridTemplateColumns = '1fr';
+  } else if (heroGrid) {
+    heroGrid.style.gridTemplateColumns = '1fr 1fr';
+  }
+  // Founder section
+  const founderGrid = document.querySelector('#founder-section .container > div');
+  if (founderGrid && window.innerWidth < 1024) {
+    founderGrid.style.gridTemplateColumns = '1fr';
+  } else if (founderGrid) {
+    founderGrid.style.gridTemplateColumns = '1fr 2fr';
+  }
+}
+window.addEventListener('resize', handleResize);
+window.addEventListener('load', handleResize);
+</script>
+
+</body>
+</html>
