@@ -31,6 +31,9 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- Layout ---------- */
 .app{display:flex;min-height:100vh}
+.nav-admin{display:none!important}
+body.role-administrator .nav-admin{display:flex!important}
+body.role-administrator .nav-group.nav-admin{display:block!important}
 .sidebar{width:248px;background:linear-gradient(180deg,#110C71,#0c0950);color:#dfe5fb;position:fixed;top:0;bottom:0;left:0;display:flex;flex-direction:column;z-index:40;transition:.25s}
 .brand{padding:20px 18px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;gap:11px;align-items:center}
 .brand .mark{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#2f5fd0,#8FAADC);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:15px;letter-spacing:.5px;flex-shrink:0}
@@ -339,6 +342,8 @@ textarea.ta:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px rgba(4
       <a data-page="sops">{ICO:doc}SOPs (1–6)</a>
       <a data-page="templates">{ICO:layers}Templates</a>
       <a data-page="regulatory">{ICO:shield}Regulatory Basis</a>
+      <div class="nav-group nav-admin">Administration</div>
+      <a data-page="users" class="nav-admin">{ICO:users}Users</a>
     </nav>
     <div class="sb-foot">ADA/COO/AC&amp;WA/AWA/MAN/001 · V1.0<br>OMAA · OMAL · OMAD · OMBY · OMDL</div>
   </aside>
@@ -613,6 +618,34 @@ textarea.ta:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px rgba(4
       </div>
     </section>
 
+    <!-- ===== USER MANAGEMENT (admin only) ===== -->
+    <section class="page" id="page-users">
+      <div class="page-head"><h2>User Management</h2><p>Administrators have full authority to add, remove and reset passwords for users of this platform. The built-in Administrator account is baked into the app and works on every device. Users you add here are stored securely (passwords are SHA-256 hashed) in this browser — use Export / Import to carry them to other devices.</p></div>
+      <div class="grid g2" style="margin-bottom:18px">
+        <div class="card"><div class="card-h"><h3>Add User</h3></div><div class="card-b">
+          <label style="display:block;font-weight:600;color:var(--navy);margin-bottom:5px;font-size:12.5px">Username</label>
+          <input type="text" id="nuUser" class="mdetail" placeholder="e.g. jsmith" autocomplete="off">
+          <label style="display:block;font-weight:600;color:var(--navy);margin:8px 0 5px;font-size:12.5px">Full Name</label>
+          <input type="text" id="nuName" class="mdetail" placeholder="e.g. John Smith" autocomplete="off">
+          <label style="display:block;font-weight:600;color:var(--navy);margin:8px 0 5px;font-size:12.5px">Role</label>
+          <select id="nuRole" class="mdetail"><option value="Administrator">Administrator (full control)</option><option value="Editor">Editor (create &amp; edit)</option><option value="Viewer" selected>Viewer (read-only)</option></select>
+          <label style="display:block;font-weight:600;color:var(--navy);margin:8px 0 5px;font-size:12.5px">Password</label>
+          <input type="password" id="nuPass" class="mdetail" placeholder="min. 6 characters" autocomplete="new-password">
+          <div id="nuErr" style="color:var(--red);font-size:12px;min-height:16px;margin:6px 0"></div>
+          <button class="btn btn-p" onclick="addUser()">＋ Add User</button>
+        </div></div>
+        <div class="card"><div class="card-h"><h3>Backup &amp; Restore</h3></div><div class="card-b">
+          <p style="font-size:12.5px;color:var(--muted);margin-bottom:12px">Added users live in this browser only. Export them to a file to back them up or move them to another device or browser, then Import there.</p>
+          <button class="btn btn-o" onclick="exportUsers()">⬇ Export Users</button>
+          <label class="btn btn-o" style="margin-left:8px;cursor:pointer">⬆ Import Users<input type="file" accept=".json" onchange="importUsers(this)" style="display:none"></label>
+          <div class="callout c-gcaa" style="margin-top:14px;font-size:12px">Tip: to make a user permanent across all devices, send the exported file to your developer to bake into the deployed app.</div>
+        </div></div>
+      </div>
+      <div class="card"><div class="card-h"><h3>All Users</h3></div><div class="card-b" style="padding:0">
+        <table><thead><tr><th>Username</th><th>Name</th><th>Role</th><th>Source</th><th>Actions</th></tr></thead><tbody id="userRows"></tbody></table>
+      </div></div>
+    </section>
+
     <!-- ===== MANUAL ===== -->
     <section class="page" id="page-manual">
       <div class="page-head"><h2>Manual for Aerodrome Works — the Umbrella</h2><p>The governing manual that sits above and integrates the six SOPs of the Works Approval process — establishing how aerodrome works are submitted, endorsed, notified, inspected and handed over.</p></div>
@@ -731,14 +764,16 @@ const ICONS={
  download:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
  flow:'<circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 6h5a4 4 0 0 1 4 4M7 18h5a4 4 0 0 0 4-4"/>',
  inbox:'<polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>',
- mic:'<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/>'
+ mic:'<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/>',
+ users:'<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
 };
 document.body.innerHTML=document.body.innerHTML.replace(/\{ICO:(\w+)\}/g,(m,n)=>`<svg viewBox="0 0 24 24">${ICONS[n]||''}</svg>`);
 
 /* ===================== NAV ===================== */
-const titles={overview:'Overview',workflow:'Automated Workflow',dashboard:'Dashboard',map:'GIS · 5 Airports',register:'AWAN Register',awacpack:'AWAC Pack & Agenda',mom:'MOM Generator',manual:'Manual (Umbrella)',sops:'SOPs (1–6)',templates:'Templates',regulatory:'Regulatory Basis'};
+const titles={overview:'Overview',workflow:'Automated Workflow',dashboard:'Dashboard',map:'GIS · 5 Airports',register:'AWAN Register',awacpack:'AWAC Pack & Agenda',mom:'MOM Generator',manual:'Manual (Umbrella)',sops:'SOPs (1–6)',templates:'Templates',regulatory:'Regulatory Basis',users:'User Management'};
 let mapInit=false, dashInit=false;
 function go(p){
+  if(p==='users'&&!(CURRENT_USER&&CURRENT_USER.role==='Administrator')){p='overview';}
   document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('active',a.dataset.page===p));
   document.querySelectorAll('.page').forEach(s=>s.classList.toggle('active',s.id==='page-'+p));
   document.getElementById('crumb').textContent=titles[p]||p;
@@ -746,6 +781,7 @@ function go(p){
   if(p==='map'){setTimeout(initMap,60);}
   if(p==='dashboard'){renderDash();dashInit=true;}
   if(p==='awacpack'){renderAgenda();}
+  if(p==='users'){renderUsers();}
   if(window.innerWidth<=900)document.getElementById('sidebar').classList.remove('open');
 }
 document.getElementById('nav').addEventListener('click',e=>{const a=e.target.closest('a[data-page]');if(a)go(a.dataset.page);});
@@ -1211,25 +1247,64 @@ function emailAgenda(){if(!AGENDA.length){alert('No agenda items to email yet.')
 /* ===================== AUTH — per-user login gate ===================== */
 /* NOTE: client-side gate only. Credentials are SHA-256 hashes, not plaintext, but a static
    file cannot provide real security — for production, enforce sign-in server-side (Entra ID SSO).
-   To manage users: replace the hashes below. Generate a hash with, e.g.:
-   echo -n 'NewPassword' | shasum -a 256   (or node: crypto.createHash('sha256').update(pw).digest('hex')) */
-const USERS=[
- {u:'esandoval',name:'Engr. Emmanuel C. Sandoval',role:'Administrator',hash:'a36aef5a11c4073fbe60314fc9df530a9d5f986533594d1f5190742ff9e0e408'},
- {u:'awaofficer',name:'Works Approval Officer',role:'Editor',hash:'4e126a1fa7eade0e4e27de4cace94d34fa4961346a566df304bb12bb52366da1'},
- {u:'viewer',name:'Read-Only User',role:'Viewer',hash:'16a6746ed035d9b663c14e17b003df87a475237ac1a1b7806aba0144d8065f69'}
+   The built-in Administrator below is baked into the file and works on every device.
+   Additional users created via the in-app "Users" panel are stored in this browser's
+   localStorage (per-device); use Export/Import there to move them between devices. */
+const BUILTIN_USERS=[
+ {u:'ecsandoval',name:'Engr. Emmanuel C. Sandoval',role:'Administrator',hash:'2fe70586bf2895e1904d61e54a13a45f6a5c9e65920b877a6a149126cf4a2491',builtin:true}
 ];
+const USER_STORE_KEY='awa_users';
+function getStoredUsers(){try{const v=localStorage.getItem(USER_STORE_KEY);const a=v?JSON.parse(v):[];return Array.isArray(a)?a:[];}catch(e){return[];}}
+function saveStoredUsers(a){try{localStorage.setItem(USER_STORE_KEY,JSON.stringify(a));return true;}catch(e){alert('Could not save users — browser storage unavailable: '+e.message);return false;}}
+function allUsers(){const seen=new Set(BUILTIN_USERS.map(u=>u.u.toLowerCase()));const merged=BUILTIN_USERS.slice();getStoredUsers().forEach(u=>{if(u&&u.u&&u.hash&&!seen.has(u.u.toLowerCase())){merged.push(u);seen.add(u.u.toLowerCase());}});return merged;}
 let CURRENT_USER=null;
 async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('');}
 async function doLogin(){
  const u=(document.getElementById('lgUser').value||'').trim().toLowerCase();
  const p=document.getElementById('lgPass').value||'';
  const err=document.getElementById('lgErr');err.textContent='';
- const user=USERS.find(x=>x.u.toLowerCase()===u);
+ const user=allUsers().find(x=>x.u.toLowerCase()===u);
  if(!user){err.textContent='Unknown username.';return;}
  let h;try{h=await sha256(p);}catch(e){err.textContent='Secure crypto unavailable — open the file over http(s) or localhost.';return;}
  if(h!==user.hash){err.textContent='Incorrect password.';return;}
  grantAccess(user);
 }
+/* ---- user management (Administrators only) ---- */
+function isAdmin(){return !!(CURRENT_USER&&CURRENT_USER.role==='Administrator');}
+async function addUser(){
+ if(!isAdmin()){alert('Administrators only.');return;}
+ const u=((document.getElementById('nuUser')||{}).value||'').trim().toLowerCase();
+ const name=((document.getElementById('nuName')||{}).value||'').trim();
+ const role=((document.getElementById('nuRole')||{}).value)||'Viewer';
+ const p=((document.getElementById('nuPass')||{}).value)||'';
+ const err=document.getElementById('nuErr');if(err)err.textContent='';
+ if(!/^[a-z0-9._-]{3,32}$/.test(u)){if(err)err.textContent='Username must be 3–32 chars: letters, numbers, . _ - only.';return;}
+ if(allUsers().some(x=>x.u.toLowerCase()===u)){if(err)err.textContent='That username already exists.';return;}
+ if(p.length<6){if(err)err.textContent='Password must be at least 6 characters.';return;}
+ let h;try{h=await sha256(p);}catch(e){if(err)err.textContent='Secure crypto unavailable (use https or localhost).';return;}
+ const extra=getStoredUsers();extra.push({u,name:name||u,role,hash:h});if(!saveStoredUsers(extra))return;
+ ['nuUser','nuName','nuPass'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
+ renderUsers();if(typeof toast==='function')toast('User added: '+u);
+}
+function deleteUser(u){
+ if(!isAdmin()){alert('Administrators only.');return;}
+ if(!confirm('Delete user "'+u+'"? This cannot be undone.'))return;
+ const extra=getStoredUsers().filter(x=>x.u.toLowerCase()!==u.toLowerCase());saveStoredUsers(extra);renderUsers();if(typeof toast==='function')toast('User deleted: '+u);
+}
+async function resetUserPw(u){
+ if(!isAdmin())return;
+ const p=prompt('New password for "'+u+'" (minimum 6 characters):');if(p===null)return;
+ if(p.length<6){alert('Password must be at least 6 characters.');return;}
+ let h;try{h=await sha256(p);}catch(e){alert('Secure crypto unavailable (use https or localhost).');return;}
+ const extra=getStoredUsers();const t=extra.find(x=>x.u.toLowerCase()===u.toLowerCase());if(t){t.hash=h;saveStoredUsers(extra);if(typeof toast==='function')toast('Password updated for '+u);}
+}
+function renderUsers(){
+ const tb=document.getElementById('userRows');if(!tb)return;
+ const escf=(typeof esc==='function')?esc:(s=>String(s==null?'':s));
+ tb.innerHTML=allUsers().map(x=>{const builtin=BUILTIN_USERS.some(b=>b.u===x.u);return '<tr><td class="mono">'+escf(x.u)+'</td><td>'+escf(x.name||'')+'</td><td><span class="badge b-rev">'+escf(x.role)+'</span></td><td>'+(builtin?'<span class="badge b-active">Built-in</span>':'<span class="badge b-ext">Added</span>')+'</td><td>'+(builtin?'<span style="color:var(--muted);font-size:11px">Edit in file</span>':'<button class="btn btn-s" onclick="resetUserPw(\''+escf(x.u)+'\')">Reset PW</button> <button class="btn btn-s" onclick="deleteUser(\''+escf(x.u)+'\')">Delete</button>')+'</td></tr>';}).join('');
+}
+function exportUsers(){const data=JSON.stringify(getStoredUsers(),null,2);const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type:'application/json'}));a.download='awa-users.json';a.click();if(typeof toast==='function')toast('Users exported.');}
+function importUsers(input){const f=input.files&&input.files[0];if(!f)return;const r=new FileReader();r.onload=e=>{try{const arr=JSON.parse(e.target.result);if(!Array.isArray(arr))throw new Error('Invalid file format');const cur=getStoredUsers();const seen=new Set(cur.map(x=>x.u.toLowerCase()).concat(BUILTIN_USERS.map(b=>b.u.toLowerCase())));let n=0;arr.forEach(x=>{if(x&&x.u&&x.hash&&!seen.has(x.u.toLowerCase())){cur.push({u:x.u,name:x.name||x.u,role:x.role||'Viewer',hash:x.hash});seen.add(x.u.toLowerCase());n++;}});saveStoredUsers(cur);renderUsers();if(typeof toast==='function')toast('Imported '+n+' user(s).');}catch(err){alert('Import failed: '+err.message);}input.value='';};r.readAsText(f);}
 function grantAccess(user){
  CURRENT_USER=user;
  try{sessionStorage.setItem('awa_user',user.u);}catch(e){}
@@ -1243,7 +1318,7 @@ function grantAccess(user){
 function logout(){CURRENT_USER=null;try{sessionStorage.removeItem('awa_user');}catch(e){}const g=document.getElementById('loginGate');if(g)g.style.display='flex';const p=document.getElementById('lgPass');if(p)p.value='';const e=document.getElementById('lgErr');if(e)e.textContent='';}
 function initAuth(){
  let su=null;try{su=sessionStorage.getItem('awa_user');}catch(e){}
- if(su){const user=USERS.find(x=>x.u===su);if(user){grantAccess(user);return;}}
+ if(su){const user=allUsers().find(x=>x.u===su);if(user){grantAccess(user);return;}}
  const g=document.getElementById('loginGate');if(g)g.style.display='flex';
  const uu=document.getElementById('lgUser');if(uu)uu.focus();
 }
